@@ -3,63 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='referrer' content='no-referrer'/>
+
     <title>YouTube Video Seamless Transition</title>
 </head>
 <body>
 
-    <!-- Main visible player -->
-    <div id="player1"></div>
-    <!-- Hidden preloading player -->
-    <div id="player2" style="display: none;"></div>
+    <div id="player"></div>
 
-    <script>
-        var player1, player2;
-        var videos = ["FEacDWPWfJU", "jcz0YxYl6Ac"];
-        var currentVideo = 0;
+<script>
+    // Load the YouTube IFrame Player API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-        // Load the YouTube API
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        function onYouTubeIframeAPIReady() {
-            // Main player
-            player1 = new YT.Player('player1', {
-                height: '360',
-                width: '640',
-                videoId: videos[0],
-                events: {
-                    'onStateChange': onPlayer1StateChange
-                }
-            });
-
-            // Preload player (hidden)
-            player2 = new YT.Player('player2', {
-                height: '360',
-                width: '640',
-                videoId: videos[1], // Preload the second video
-                events: {
-                    'onReady': onPlayer2Ready
-                }
-            });
-        }
-
-        // When the second player is ready, cue the video but don't play it
-        function onPlayer2Ready(event) {
-            player2.cueVideoById(videos[1]);
-        }
-
-        // When the first video ends, switch to the preloaded video in player2
-        function onPlayer1StateChange(event) {
-            if (event.data === YT.PlayerState.ENDED) {
-                // Hide player1 and show player2
-                document.getElementById('player1').style.display = 'none';
-                document.getElementById('player2').style.display = 'block';
-                player2.playVideo(); // Play the preloaded video
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '360',
+            width: '640',
+            videoId: 'FEacDWPWfJU',  // First video ID
+            playerVars: {
+                'playlist': 'jcz0YxYl6Ac', // Second video ID for seamless transition
+                'autoplay': 1,
+                'loop': 1
+            },
+            events: {
+                'onReady': onPlayerReady
             }
-        }
-    </script>
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+</script>
 
 </body>
 </html>
