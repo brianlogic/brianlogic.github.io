@@ -7,95 +7,98 @@
 </head>
 <body>
 
-<div id="player1" class="player"></div>
-<div id="player2" class="player" style="display: none;"></div>
-
-<script>
-    var player1, player2;
-    var currentPlayer = 1;
-    var videoQueue = ['FEacDWPWfJU', 'jcz0YxYl6Ac'];  // Replace with your video IDs
-    var currentVideoIndex = 0;
-
-    // Load YouTube IFrame Player API
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    function onYouTubeIframeAPIReady() {
-        // Initialize both players
-        player1 = new YT.Player('player1', {
-            height: '360',
-            width: '640',
-            videoId: videoQueue[currentVideoIndex],  // First video
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
+    <div id="player1" class="player"></div>
+    <div id="player2" class="player" style="display: none;"></div>
+    
+    <script>
+        var player1, player2;
+        var currentPlayer = 1;
+        var videoQueue = ['FEacDWPWfJU', 'jcz0YxYl6Ac'];  // Replace with your video IDs
+        var currentVideoIndex = 0;
+    
+        // Load YouTube IFrame Player API
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+        function onYouTubeIframeAPIReady() {
+            // Initialize both players
+            player1 = new YT.Player('player1', {
+                height: '360',
+                width: '640',
+                videoId: videoQueue[currentVideoIndex],  // First video
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+            player2 = new YT.Player('player2', {
+                height: '360',
+                width: '640',
+                videoId: videoQueue[currentVideoIndex + 1],  // Preload second video
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+    
+        function onPlayerReady(event) {
+            if (event.target === player1) {
+                event.target.playVideo();
+            } else {
+                // Preload next video with cueVideoById
+                player2.cueVideoById(videoQueue[(currentVideoIndex + 1) % videoQueue.length]);
             }
-        });
-        player2 = new YT.Player('player2', {
-            height: '360',
-            width: '640',
-            videoId: videoQueue[currentVideoIndex + 1],  // Preload second video
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
+        }
+    
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+                // Switch players when the video ends
+                switchPlayers();
             }
-        });
-    }
-
-    function onPlayerReady(event) {
-        if (currentPlayer === 1 && event.target === player1) {
-            event.target.playVideo();
         }
-    }
-
-    function onPlayerStateChange(event) {
-        if (event.data === YT.PlayerState.ENDED) {
-            // Switch players when the video ends
-            switchPlayers();
+    
+        function switchPlayers() {
+            currentVideoIndex++;
+    
+            if (currentVideoIndex >= videoQueue.length) {
+                // No more videos
+                return;
+            }
+    
+            if (currentPlayer === 1) {
+                // Hide player1 and show player2
+                document.getElementById('player1').style.display = 'none';
+                document.getElementById('player2').style.display = 'block';
+    
+                // Play video2
+                player2.playVideo();
+    
+                // Preload the next video in player1
+                player1.cueVideoById(videoQueue[(currentVideoIndex + 1) % videoQueue.length]);
+                currentPlayer = 2;
+            } else {
+                // Hide player2 and show player1
+                document.getElementById('player2').style.display = 'none';
+                document.getElementById('player1').style.display = 'block';
+    
+                // Play video1
+                player1.playVideo();
+    
+                // Preload the next video in player2
+                player2.cueVideoById(videoQueue[(currentVideoIndex + 1) % videoQueue.length]);
+                currentPlayer = 1;
+            }
         }
-    }
-
-    function switchPlayers() {
-        currentVideoIndex++;
-
-        if (currentVideoIndex >= videoQueue.length) {
-            // No more videos
-            return;
+    </script>
+    
+    <style>
+        .player {
+            margin: 20px;
         }
-
-        if (currentPlayer === 1) {
-            // Hide player1 and show player2
-            document.getElementById('player1').style.display = 'none';
-            document.getElementById('player2').style.display = 'block';
-
-            // Load the next video into player1 (in the background)
-            player1.loadVideoById(videoQueue[(currentVideoIndex + 1) % videoQueue.length]);
-
-            // Play video2
-            player2.playVideo();
-            currentPlayer = 2;
-        } else {
-            // Hide player2 and show player1
-            document.getElementById('player2').style.display = 'none';
-            document.getElementById('player1').style.display = 'block';
-
-            // Load the next video into player2 (in the background)
-            player2.loadVideoById(videoQueue[(currentVideoIndex + 1) % videoQueue.length]);
-
-            // Play video1
-            player1.playVideo();
-            currentPlayer = 1;
-        }
-    }
-</script>
-
-<style>
-    .player {
-        margin: 20px;
-    }
-</style>
-
+    </style>
+    
 </body>
 </html>
