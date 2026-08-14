@@ -1,0 +1,50 @@
+.bento-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  padding: 1.4rem 1.45rem;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--text);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.bento-card:hover {
+  border-color: rgba(224, 163, 106, 0.32);
+  background: var(--card-hover);
+}
+
+.bento-card.is-accent {
+  background: var(--accent);
+  border-color: transparent;
+}
+
+.bento-card.is-accent:hover {
+  background: #46322a;
+  border-color: rgba(224, 163, 106, 0.2);
+}
+
+.bento-card h1,
+.bento-card h2,
+.bento-card h3,
+.bento-card p {
+  margin: 0;
+}
+
+.bento-card h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.bento-card p {
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+a.bento-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
