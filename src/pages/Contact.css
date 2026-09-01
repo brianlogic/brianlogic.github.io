@@ -19,6 +19,12 @@
   border-radius: 999px;
   padding: 0.7rem 1rem;
   cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-mail button:hover {
+  background: color-mix(in srgb, var(--name) 22%, var(--pill));
+  color: var(--name);
 }
 
 .contact-social h2 {
@@ -35,6 +41,10 @@
   font-style: italic;
   font-weight: 500;
   font-size: 1.8rem;
+  background: linear-gradient(120deg, var(--name), var(--pop-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .contact-form form {
@@ -63,7 +73,7 @@
 .contact-form button[type='submit'] {
   justify-self: start;
   border: 0;
-  background: var(--name);
+  background: linear-gradient(120deg, var(--name), var(--pop));
   color: #0c141c;
   border-radius: 999px;
   padding: 0.75rem 1.15rem;

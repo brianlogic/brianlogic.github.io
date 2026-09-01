@@ -24,7 +24,7 @@
 }
 
 .nav.is-scrolled .nav-pill {
-  border-color: rgba(142, 184, 212, 0.28);
+  border-color: color-mix(in srgb, var(--name) 35%, transparent);
 }
 
 .nav-mark {
@@ -78,6 +78,6 @@
   bottom: 0;
   height: 1.5px;
   transform-origin: 0 50%;
-  background: linear-gradient(90deg, transparent, var(--name), transparent);
+  background: linear-gradient(90deg, transparent, var(--pop-2), var(--name), var(--pop), transparent);
   pointer-events: none;
 }

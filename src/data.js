@@ -5,15 +5,23 @@ export const PERSON = {
   role: 'Student &\nFull Stack Developer',
   email: 'briantra23@gmail.com',
   location: 'Ashburn, VA',
+  school: 'University of Virginia',
+  focus: 'Computer Science',
+  now: 'Studying Computer Science at UVA, after internships in frontend and software engineering.',
   github: 'https://github.com/brianlogic',
   linkedin: 'https://www.linkedin.com/in/brian-tran-756508244/',
   quote: 'If you want to do extraordinary things, it shouldn\'t be easy',
   about:
     "I'm a student and full stack developer who likes quiet interfaces with a little personality. I care about type, motion that earns its place, and software that feels considered.",
-  photo:
-    'https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1200&q=80',
-  photoCaption: 'Somewhere with better light',
+  photo: 'https://github.com/brianlogic.png?size=800',
+  photoCaption: 'Brian Tran',
 }
+
+export const FACTS = [
+  { label: 'School', value: 'UVA' },
+  { label: 'Major', value: 'CS' },
+  { label: 'Based', value: 'Ashburn, VA' },
+]
 
 export const TECH = [
   { id: 'js', label: 'JavaScript' },
@@ -62,30 +70,38 @@ export const TIMELINE = [
 export const PROJECTS = [
   {
     title: 'Cursor Dependency Risk Extension',
-    year: '2025',
+    month: '',
+    period: '2025',
     blurb: 'A calm dashboard for a fictional logistics studio — charts, filters, and a dark UI.',
     tags: ['React', 'Vite', 'CSS'],
-    link: '',
+    link: 'https://marketplace.visualstudio.com/items?itemName=BT23.dependency-version-risk',
+    image: '',
   },
   {
     title: 'Modeling Naval Systems',
-    year: '2024',
+    month: '',
+    period: '2024',
     blurb: 'A tiny markdown notebook with keyboard-first navigation and local-first storage.',
     tags: ['TypeScript', 'IndexedDB'],
-    link: '',
+    link: 'https://github.com/brianlogic/Modeling-Navy-Computing/tree/main',
+    image: '',
   },
   {
     title: 'HoosMap',
-    year: '2024',
+    month: '',
+    period: '2024',
     blurb: 'Landing page and booking flow for a coastal cafe, built as a class project.',
     tags: ['Next.js', 'Tailwind'],
-    link: '',
+    link: 'https://github.com/brianlogic/HoosMap',
+    image: '',
   },
   {
     title: 'Crisis Hotline Agent',
-    year: '2024',
+    month: '',
+    period: '2024',
     blurb: 'Landing page and booking flow for a coastal cafe, built as a class project.',
     tags: ['Next.js', 'Tailwind'],
-    link: '',
+    link: 'https://github.com/YuDavidCao/hotline-agent',
+    image: '',
   },
 ]

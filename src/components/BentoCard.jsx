@@ -8,15 +8,17 @@ export default function BentoCard({
   className = '',
   delay = 0,
   accent = false,
+  tone,
   immediate = false,
   href,
 }) {
+  const palette = tone || (accent ? 'accent' : '')
   const Tag = href ? motion.a : motion.article
   const extras = href ? { href, target: '_blank', rel: 'noreferrer' } : {}
 
   return (
     <Tag
-      className={`bento-card ${accent ? 'is-accent' : ''} ${className}`}
+      className={`bento-card ${palette ? `is-${palette}` : ''} ${className}`}
       initial={immediate ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 16, filter: 'blur(6px)' }}
       animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       transition={{ duration: 0.6, delay: immediate ? 0 : delay, ease }}

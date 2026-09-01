@@ -3,6 +3,10 @@ import BentoCard from '../components/BentoCard'
 import { PROJECTS } from '../data'
 import './Projects.css'
 
+function projectWhen(project) {
+  return [project.month, project.period].filter(Boolean).join(' · ')
+}
+
 function workLabel(project) {
   if (project.linkLabel) return project.linkLabel
 
@@ -26,8 +30,17 @@ export default function Projects() {
   return (
     <div className="projects">
       {PROJECTS.map((project, index) => (
-        <BentoCard key={project.title} className="project-card" delay={0.06 * index}>
-          <span>0{index + 1} / {project.year}</span>
+        <BentoCard
+          key={project.title}
+          className={`project-card ${project.image ? 'has-image' : ''}`}
+          delay={0.06 * index}
+        >
+          {project.image ? (
+            <div className="project-image">
+              <img src={project.image} alt={project.imageAlt || project.title} />
+            </div>
+          ) : null}
+          <span>0{index + 1} / {projectWhen(project)}</span>
           <h2>{project.title}</h2>
           <p>{project.blurb}</p>
           <div className="project-footer">
