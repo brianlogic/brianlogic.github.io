@@ -11,7 +11,7 @@ export const PERSON = {
   about:
     "I'm a student and full stack developer who likes quiet interfaces with a little personality. I care about type, motion that earns its place, and software that feels considered.",
   photo:
-    'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+    'https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1200&q=80',
   photoCaption: 'Somewhere with better light',
 }
 
@@ -44,18 +44,18 @@ export const TIMELINE = [
   },
   {
     title: 'Starting first year at University of Virginia',
-    dates: 'August',
+    dates: 'August 2024',
     body: 'Began studying Computer Science at the University of Virginia. ',
   },
   {
-    title: 'CS50 Introduction to Computer Science',
-    dates: '2023',
-    body: 'Completed Harvard’s CS50 to build a stronger foundation in algorithms, C, and problem solving.',
+    title: 'North Point Technology Internship',
+    dates: 'June 2024 - August 2024',
+    body: 'Software Engineer Intern at NorthPoint Technology LLC. Worked on webscraping tools to identify job openings in prime contractors',
   },
   {
-    title: 'Frontend practice',
-    dates: '2024',
-    body: 'A year of shipping personal projects in React, learning motion, and tightening visual craft.',
+    title: 'Top Secret Security Clearance',
+    dates: 'January 2026',
+    body: 'Received a Top Secret security clearance from the U.S. government, sponsored by North Point Technology.',
   },
 ]
 
@@ -65,23 +65,27 @@ export const PROJECTS = [
     year: '2025',
     blurb: 'A calm dashboard for a fictional logistics studio — charts, filters, and a dark UI.',
     tags: ['React', 'Vite', 'CSS'],
+    link: '',
   },
   {
     title: 'Modeling Naval Systems',
     year: '2024',
     blurb: 'A tiny markdown notebook with keyboard-first navigation and local-first storage.',
     tags: ['TypeScript', 'IndexedDB'],
+    link: '',
   },
   {
     title: 'HoosMap',
     year: '2024',
     blurb: 'Landing page and booking flow for a coastal cafe, built as a class project.',
     tags: ['Next.js', 'Tailwind'],
+    link: '',
   },
   {
     title: 'Crisis Hotline Agent',
     year: '2024',
     blurb: 'Landing page and booking flow for a coastal cafe, built as a class project.',
     tags: ['Next.js', 'Tailwind'],
+    link: '',
   },
 ]

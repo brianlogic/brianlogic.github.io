@@ -1,15 +1,16 @@
 :root {
-  --bg: #12110f;
-  --bg-2: #1a1815;
-  --card: #1c1b18;
-  --card-hover: #23211d;
-  --pill: #26241f;
-  --pill-active: #3a362f;
-  --accent: #3b2a22;
-  --name: #e0a36a;
-  --text: #f3eee6;
-  --muted: #9c958a;
-  --line: rgba(243, 238, 230, 0.1);
+  --bg: #0e1319;
+  --bg-2: #141b24;
+  --card: #161e28;
+  --card-hover: #1c2632;
+  --pill: #1e2834;
+  --pill-active: #2a3848;
+  --accent: #1a2c3d;
+  --accent-hover: #234056;
+  --name: #8eb8d4;
+  --text: #e6eef5;
+  --muted: #8b9aab;
+  --line: rgba(230, 238, 245, 0.1);
   --radius: 18px;
   --nav-radius: 999px;
   --font: Outfit, ui-sans-serif, system-ui, sans-serif;
@@ -37,8 +38,8 @@ body,
 body {
   margin: 0;
   background:
-    radial-gradient(900px 480px at 80% -10%, rgba(224, 163, 106, 0.12), transparent 55%),
-    radial-gradient(700px 420px at 0% 90%, rgba(59, 42, 34, 0.55), transparent 50%),
+    radial-gradient(900px 480px at 80% -10%, rgba(142, 184, 212, 0.14), transparent 55%),
+    radial-gradient(700px 420px at 0% 90%, rgba(26, 44, 61, 0.62), transparent 50%),
     var(--bg);
 }
 
@@ -79,7 +80,7 @@ textarea:focus-visible {
 
 ::selection {
   background: var(--name);
-  color: #1a120c;
+  color: #0c141c;
 }
 
 .app-shell {

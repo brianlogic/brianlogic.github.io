@@ -28,7 +28,7 @@ export default function Home() {
       </BentoCard>
 
       <BentoCard className="bento-photo" delay={0.12}>
-        <img src={PERSON.photo} alt="Desert road at dusk" />
+        <img src={PERSON.photo} alt="Calm ocean at blue hour" />
         <span className="bento-photo__caption">{PERSON.photoCaption}</span>
       </BentoCard>
 

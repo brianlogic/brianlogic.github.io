@@ -11,7 +11,7 @@
 }
 
 .bento-card:hover {
-  border-color: rgba(224, 163, 106, 0.32);
+  border-color: rgba(142, 184, 212, 0.32);
   background: var(--card-hover);
 }
 
@@ -21,8 +21,8 @@
 }
 
 .bento-card.is-accent:hover {
-  background: #46322a;
-  border-color: rgba(224, 163, 106, 0.2);
+  background: var(--accent-hover);
+  border-color: rgba(142, 184, 212, 0.2);
 }
 
 .bento-card h1,

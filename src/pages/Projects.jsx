@@ -3,6 +3,25 @@ import BentoCard from '../components/BentoCard'
 import { PROJECTS } from '../data'
 import './Projects.css'
 
+function workLabel(project) {
+  if (project.linkLabel) return project.linkLabel
+
+  try {
+    const url = new URL(project.link)
+    const host = url.hostname.replace(/^www\./, '')
+    const path = url.pathname.toLowerCase()
+
+    if (host.includes('github')) return 'View on GitHub'
+    if (path.endsWith('.pdf') || host.includes('arxiv') || host.includes('scholar')) {
+      return 'Read the paper'
+    }
+  } catch {
+    return 'View work'
+  }
+
+  return 'View work'
+}
+
 export default function Projects() {
   return (
     <div className="projects">
@@ -11,10 +30,17 @@ export default function Projects() {
           <span>0{index + 1} / {project.year}</span>
           <h2>{project.title}</h2>
           <p>{project.blurb}</p>
-          <div className="project-tags">
-            {project.tags.map((tag) => (
-              <em key={tag}>{tag}</em>
-            ))}
+          <div className="project-footer">
+            <div className="project-tags">
+              {project.tags.map((tag) => (
+                <em key={tag}>{tag}</em>
+              ))}
+            </div>
+            {project.link ? (
+              <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
+                {workLabel(project)} →
+              </a>
+            ) : null}
           </div>
         </BentoCard>
       ))}
