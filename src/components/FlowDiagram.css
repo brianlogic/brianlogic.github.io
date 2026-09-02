@@ -1,0 +1,77 @@
+.flow {
+  margin: 1.1rem 0 0;
+  padding: 1rem 1.05rem;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--name) 8%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--name) 22%, transparent);
+}
+
+.flow img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.flow-nodes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.2rem;
+}
+
+.flow-nodes li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.flow-node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.45rem 0.75rem;
+  border-radius: 10px;
+  background: var(--card);
+  border: 1px solid color-mix(in srgb, var(--name) 28%, transparent);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.flow-nodes li:nth-child(3n + 2) .flow-node {
+  border-color: color-mix(in srgb, var(--pop) 40%, transparent);
+}
+
+.flow-nodes li:nth-child(3n + 3) .flow-node {
+  border-color: color-mix(in srgb, var(--pop-2) 40%, transparent);
+}
+
+.flow-arrow {
+  width: 18px;
+  height: 2px;
+  background: color-mix(in srgb, var(--name) 70%, transparent);
+  position: relative;
+}
+
+.flow-arrow::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid color-mix(in srgb, var(--name) 70%, transparent);
+  border-top: 2px solid color-mix(in srgb, var(--name) 70%, transparent);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.flow figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}

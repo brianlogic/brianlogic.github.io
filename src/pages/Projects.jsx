@@ -7,29 +7,42 @@ function projectWhen(project) {
   return [project.month, project.period].filter(Boolean).join(' · ')
 }
 
-function workLabel(project) {
-  if (project.linkLabel) return project.linkLabel
+function projectLinks(project) {
+  if (Array.isArray(project.links) && project.links.length) {
+    return project.links.filter((item) => item?.href)
+  }
+  if (project.link) {
+    return [{ href: project.link, label: project.linkLabel }]
+  }
+  return []
+}
+
+function workLabel(item) {
+  if (item.label) return item.label
 
   try {
-    const url = new URL(project.link)
+    const url = new URL(item.href)
     const host = url.hostname.replace(/^www\./, '')
     const path = url.pathname.toLowerCase()
 
-    if (host.includes('github')) return 'View on GitHub'
+    if (host.includes('github')) return 'Code'
     if (path.endsWith('.pdf') || host.includes('arxiv') || host.includes('scholar')) {
-      return 'Read the paper'
+      return 'Paper'
     }
   } catch {
-    return 'View work'
+    return 'Live demo'
   }
 
-  return 'View work'
+  return 'Live demo'
 }
 
 export default function Projects() {
   return (
     <div className="projects">
-      {PROJECTS.map((project, index) => (
+      {PROJECTS.map((project, index) => {
+        const links = projectLinks(project)
+
+        return (
         <BentoCard
           key={project.title}
           className={`project-card ${project.image ? 'has-image' : ''}`}
@@ -49,14 +62,19 @@ export default function Projects() {
                 <em key={tag}>{tag}</em>
               ))}
             </div>
-            {project.link ? (
-              <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
-                {workLabel(project)} →
-              </a>
+            {links.length ? (
+              <div className="project-links">
+                {links.map((item) => (
+                  <a key={item.href} className="project-link" href={item.href} target="_blank" rel="noreferrer">
+                    {workLabel(item)} →
+                  </a>
+                ))}
+              </div>
             ) : null}
           </div>
         </BentoCard>
-      ))}
+        )
+      })}
 
       <BentoCard className="project-soon" delay={0.24} accent>
         <h2>Coming soon</h2>

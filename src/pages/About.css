@@ -1,0 +1,91 @@
+.about-page {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    'lead lead photo'
+    'card0 card1 photo'
+    'card2 card3 likes';
+  gap: 18px;
+}
+
+.about-lead {
+  grid-area: lead;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-lead h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.about-lead p:last-child {
+  max-width: 46ch;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.about-photo {
+  grid-area: photo;
+  padding: 0;
+  min-height: 280px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.about-card h2 {
+  margin-bottom: 0.45rem;
+  font-size: 1.25rem;
+}
+
+.about-card-0 { grid-area: card0; }
+.about-card-1 { grid-area: card1; }
+.about-card-2 { grid-area: card2; }
+.about-card-3 { grid-area: card3; }
+
+.about-likes {
+  grid-area: likes;
+}
+
+.kicker-on-accent {
+  color: color-mix(in srgb, white 72%, var(--name));
+}
+
+.about-likes ul {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.about-likes li {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 720px) {
+  .about-page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'photo'
+      'lead'
+      'card0'
+      'card1'
+      'card2'
+      'card3'
+      'likes';
+  }
+
+  .about-photo {
+    min-height: 240px;
+  }
+}

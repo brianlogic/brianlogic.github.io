@@ -16,8 +16,7 @@
   --line: rgba(230, 238, 245, 0.1);
   --radius: 18px;
   --nav-radius: 999px;
-  --font: Outfit, ui-sans-serif, system-ui, sans-serif;
-  --font-serif: Fraunces, Georgia, serif;
+  --font: system-ui, -apple-system, Segoe UI, sans-serif;
   color: var(--text);
   background: var(--bg);
   font-family: var(--font);

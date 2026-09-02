@@ -1,0 +1,88 @@
+.experience {
+  display: grid;
+  gap: 28px;
+}
+
+.experience-lead h1 {
+  margin: 0 0 0.45rem;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.experience-lead p:last-child {
+  max-width: 52ch;
+}
+
+.experience-job {
+  display: grid;
+  gap: 14px;
+}
+
+.experience-head h2 {
+  font-size: 1.55rem;
+}
+
+.experience-org {
+  color: var(--text) !important;
+  font-weight: 600;
+  margin-bottom: 0.35rem !important;
+}
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.experience-tags em {
+  font-style: normal;
+  font-size: 0.75rem;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--name) 14%, transparent);
+  color: var(--name);
+}
+
+.experience-tags em:nth-child(3n + 2) {
+  background: color-mix(in srgb, var(--pop) 14%, transparent);
+  color: var(--pop);
+}
+
+.experience-tags em:nth-child(3n + 3) {
+  background: color-mix(in srgb, var(--pop-2) 16%, transparent);
+  color: var(--pop-2);
+}
+
+.experience-highlights {
+  margin: 0 0 1.2rem;
+  padding: 0 0 0 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+  color: var(--text);
+}
+
+.experience-body section + section {
+  margin-top: 1.15rem;
+}
+
+.experience-body h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.experience-shot {
+  margin: 1.1rem 0 0;
+}
+
+.experience-shot img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.experience-shot figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
