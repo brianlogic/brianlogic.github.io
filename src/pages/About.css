@@ -2,11 +2,11 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-areas:
-    'lead lead photo'
-    'card0 card1 photo'
+    'lead lead photo0'
+    'card0 card1 photo0'
+    'photo1 photo2 photo3'
     'card2 card3 likes'
-    'mail github linkedin'
-    'form form form';
+    'mail github linkedin';
   gap: 18px;
 }
 
@@ -30,16 +30,24 @@
 }
 
 .about-photo {
-  grid-area: photo;
   padding: 0;
-  min-height: 280px;
+  min-height: 240px;
 }
+
+.about-photo-0 {
+  grid-area: photo0;
+  min-height: 420px;
+}
+
+.about-photo-1 { grid-area: photo1; }
+.about-photo-2 { grid-area: photo2; }
+.about-photo-3 { grid-area: photo3; }
 
 .about-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 20%;
   display: block;
 }
 
@@ -134,65 +142,15 @@
   font-size: 1.1rem;
 }
 
-.about-form {
-  grid-area: form;
-}
-
-.about-form h2 {
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-  font-size: 1.8rem;
-  background: linear-gradient(120deg, var(--name), var(--pop-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.about-form form {
-  display: grid;
-  gap: 0.9rem;
-  margin-top: 1.2rem;
-}
-
-.about-form label {
-  display: grid;
-  gap: 0.4rem;
-  color: var(--muted);
-  font-size: 0.88rem;
-}
-
-.about-form input,
-.about-form textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  background: #111820;
-  color: var(--text);
-  border-radius: 12px;
-  padding: 0.75rem 0.85rem;
-}
-
-.about-form button[type='submit'] {
-  justify-self: start;
-  border: 0;
-  background: linear-gradient(120deg, var(--name), var(--pop));
-  color: #0c141c;
-  border-radius: 999px;
-  padding: 0.75rem 1.15rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.about-thanks {
-  margin-top: 1rem;
-  color: var(--name) !important;
-}
-
 @media (max-width: 720px) {
   .about-page {
     grid-template-columns: 1fr;
     grid-template-areas:
-      'photo'
+      'photo0'
       'lead'
+      'photo1'
+      'photo2'
+      'photo3'
       'card0'
       'card1'
       'card2'
@@ -200,11 +158,11 @@
       'likes'
       'mail'
       'github'
-      'linkedin'
-      'form';
+      'linkedin';
   }
 
-  .about-photo {
-    min-height: 240px;
+  .about-photo,
+  .about-photo-0 {
+    min-height: 280px;
   }
 }

@@ -1,3 +1,9 @@
+import cold from './assets/cold.jpg'
+import face from './assets/face.jpg'
+import happiness from './assets/happiness.jpg'
+import japan from './assets/japan.jpg'
+import photoshoot from './assets/photoshoot.JPG'
+
 export const PERSON = {
   first: 'Brian',
   last: 'Tran',
@@ -13,23 +19,26 @@ export const PERSON = {
   quote: 'If you want to do extraordinary things, it shouldn\'t be easy',
   about:
     "Hey! I'm a student and full stack developer who likes quiet interfaces with a little personality. I care about type, motion that earns its place, and software that feels considered.",
-  photo: 'https://github.com/brianlogic.png?size=800',
+  photo: face,
   photoCaption: 'Brian Tran',
 }
 
 export const TECH = [
+  { id: 'python', label: 'Python' },
   { id: 'js', label: 'JavaScript' },
   { id: 'ts', label: 'TypeScript' },
   { id: 'react', label: 'React' },
-  { id: 'vue', label: 'Vue.js' },
-  { id: 'node', label: 'Node.js' },
-  { id: 'tailwind', label: 'Tailwind CSS' },
+  { id: 'sql', label: 'SQL' },
+  { id: 'html', label: 'HTML/CSS' },
+  { id: 'django', label: 'Django' },
   { id: 'next', label: 'Next.js' },
-  { id: 'express', label: 'Express' },
-  { id: 'mongo', label: 'MongoDB' },
   { id: 'postgres', label: 'PostgreSQL' },
-  { id: 'figma', label: 'Figma' },
-  { id: 'git', label: 'Git' },
+  { id: 'tailwind', label: 'Tailwind' },
+  { id: 'ec2', label: 'AWS EC2' },
+  { id: 'lambda', label: 'AWS Lambda' },
+  { id: 's3', label: 'AWS S3' },
+  { id: 'docker', label: 'Docker' },
+  { id: 'java', label: 'Java' },
 ]
 
 export const TIMELINE = [
@@ -225,6 +234,12 @@ export const EXPERIENCE = [
 
 export const ABOUT = {
   lead: 'Outside of internships and class, I like building things with a little personality — and I take on more than I probably should.',
+  photos: [
+    { src: photoshoot, alt: 'Brian in a suit outdoors' },
+    { src: japan, alt: 'Brian in Japan' },
+    { src: happiness, alt: 'Brian on a summer afternoon' },
+    { src: cold, alt: 'Brian in a coat at night' },
+  ],
   cards: [
     {
       title: 'Hackathons',

@@ -8,7 +8,6 @@ import './About.css'
 export default function About() {
   const location = useLocation()
   const [copied, setCopied] = useState(false)
-  const [sent, setSent] = useState(false)
 
   useEffect(() => {
     if (location.hash !== '#contact') return
@@ -25,11 +24,6 @@ export default function About() {
     }
   }
 
-  const onSubmit = (event) => {
-    event.preventDefault()
-    setSent(true)
-  }
-
   return (
     <div className="about-page">
       <BentoCard className="about-lead" tone="violet" immediate>
@@ -38,9 +32,15 @@ export default function About() {
         <p>{ABOUT.lead}</p>
       </BentoCard>
 
-      <BentoCard className="about-photo" delay={0.06}>
-        <img src={PERSON.photo} alt={`${PERSON.name} portrait`} />
-      </BentoCard>
+      {ABOUT.photos.map((photo, index) => (
+        <BentoCard
+          key={photo.alt}
+          className={`about-photo about-photo-${index}`}
+          delay={0.06 + index * 0.04}
+        >
+          <img src={photo.src} alt={photo.alt} />
+        </BentoCard>
+      ))}
 
       {ABOUT.cards.map((card, index) => (
         <BentoCard
@@ -86,31 +86,6 @@ export default function About() {
           <IconLinkedIn />
           LinkedIn
         </h2>
-      </BentoCard>
-
-      <BentoCard className="about-form" delay={0.44}>
-        <p className="kicker">Contact</p>
-        <h2>Say hello</h2>
-        <p>A short note is plenty. I’ll write back.</p>
-        {sent ? (
-          <p className="about-thanks">Thanks — I’ll get back to you soon.</p>
-        ) : (
-          <form onSubmit={onSubmit}>
-            <label>
-              Name
-              <input name="name" placeholder="Jane Doe" required />
-            </label>
-            <label>
-              Email
-              <input name="email" type="email" placeholder="jane@example.com" required />
-            </label>
-            <label>
-              Message
-              <textarea name="message" rows="5" placeholder="Enter your message here" required />
-            </label>
-            <button type="submit">Send Message</button>
-          </form>
-        )}
       </BentoCard>
     </div>
   )
