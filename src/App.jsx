@@ -1,8 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import About from './pages/About'
-import Contact from './pages/Contact'
 import Experience from './pages/Experience'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
@@ -27,7 +26,7 @@ export default function App() {
               <Route path="/experience" element={<Experience />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/contact" element={<Navigate to="/about#contact" replace />} />
             </Routes>
           </motion.div>
         </AnimatePresence>

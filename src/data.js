@@ -70,13 +70,14 @@ export const PROJECTS = [
   {
     title: 'Cursor Dependency Risk Extension',
     month: '',
-    period: '2025',
+    period: 'May 2026 - Present',
     blurb: 'A calm dashboard for a fictional logistics studio — charts, filters, and a dark UI.',
     tags: ['React', 'Vite', 'CSS'],
     links: [
       { href: 'https://marketplace.visualstudio.com/items?itemName=BT23.dependency-version-risk', label: 'Live demo' },
     ],
     image: '',
+    featured: true,
   },
   {
     title: 'Modeling Naval Systems',
@@ -88,6 +89,7 @@ export const PROJECTS = [
       { href: 'https://github.com/brianlogic/Modeling-Navy-Computing/tree/main', label: 'Code' },
     ],
     image: '',
+    featured: true,
   },
   {
     title: 'HoosMap',
@@ -99,6 +101,7 @@ export const PROJECTS = [
       { href: 'https://github.com/brianlogic/HoosMap', label: 'Code' },
     ],
     image: '',
+    featured: true,
   },
   {
     title: 'Crisis Hotline Agent',

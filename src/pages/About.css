@@ -4,7 +4,9 @@
   grid-template-areas:
     'lead lead photo'
     'card0 card1 photo'
-    'card2 card3 likes';
+    'card2 card3 likes'
+    'mail github linkedin'
+    'form form form';
   gap: 18px;
 }
 
@@ -72,6 +74,119 @@
   font-size: 1.05rem;
 }
 
+.about-mail {
+  grid-area: mail;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.15rem;
+}
+
+.about-mail p,
+.about-social h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--text);
+}
+
+#contact {
+  scroll-margin-top: 5.5rem;
+}
+
+.about-mail svg,
+.about-social svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.about-mail button {
+  align-self: start;
+  border: 0;
+  background: var(--pill);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.about-mail button:hover {
+  background: color-mix(in srgb, var(--pop) 22%, var(--pill));
+  color: var(--pop);
+}
+
+.about-social {
+  grid-area: github;
+  display: flex;
+  align-items: center;
+  padding: 0.95rem 1.15rem;
+}
+
+.about-linkedin {
+  grid-area: linkedin;
+}
+
+.about-social h2 {
+  font-size: 1.1rem;
+}
+
+.about-form {
+  grid-area: form;
+}
+
+.about-form h2 {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  background: linear-gradient(120deg, var(--name), var(--pop-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-form form {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+
+.about-form label {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.about-form input,
+.about-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #111820;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+}
+
+.about-form button[type='submit'] {
+  justify-self: start;
+  border: 0;
+  background: linear-gradient(120deg, var(--name), var(--pop));
+  color: #0c141c;
+  border-radius: 999px;
+  padding: 0.75rem 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.about-thanks {
+  margin-top: 1rem;
+  color: var(--name) !important;
+}
+
 @media (max-width: 720px) {
   .about-page {
     grid-template-columns: 1fr;
@@ -82,7 +197,11 @@
       'card1'
       'card2'
       'card3'
-      'likes';
+      'likes'
+      'mail'
+      'github'
+      'linkedin'
+      'form';
   }
 
   .about-photo {

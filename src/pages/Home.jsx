@@ -1,7 +1,13 @@
+import { Link } from 'react-router-dom'
 import BentoCard from '../components/BentoCard'
+import ProjectCard from '../components/ProjectCard'
+import { IconGitHub, IconLinkedIn, IconMail } from '../components/SocialIcons'
 import TechIcon from '../components/TechIcon'
-import { PERSON, TECH, TIMELINE } from '../data'
+import { PERSON, PROJECTS, TECH, TIMELINE } from '../data'
 import './Home.css'
+
+const FEATURED = PROJECTS.filter((project) => project.featured).slice(0, 3)
+const HOME_TONES = ['cyan', 'mint', 'violet']
 
 export default function Home() {
   return (
@@ -11,10 +17,12 @@ export default function Home() {
       </BentoCard>
 
       <BentoCard className="bento-intro" tone="cyan" delay={0.06}>
-        <h1>
-          {PERSON.first} <em>{PERSON.last}</em>
-        </h1>
-        <p className="bento-intro__role">{PERSON.role}</p>
+        <div className="bento-intro__headline">
+          <h1>
+            {PERSON.first} <em>{PERSON.last}</em>
+          </h1>
+          <p className="bento-intro__role">{PERSON.role}</p>
+        </div>
         <ul className="bento-intro__facts">
           <li>
             <span>Focus</span>
@@ -49,20 +57,41 @@ export default function Home() {
         <p className="kicker">Contact</p>
         <div className="link-list">
           <a href={PERSON.github} target="_blank" rel="noreferrer">
-            GitHub →
+            <IconGitHub />
+            GitHub
           </a>
           <a href={PERSON.linkedin} target="_blank" rel="noreferrer">
-            LinkedIn →
+            <IconLinkedIn />
+            LinkedIn
           </a>
-          <a href={`mailto:${PERSON.email}`}>{PERSON.email}</a>
+          <a href={`mailto:${PERSON.email}`}>
+            <IconMail />
+            Email
+          </a>
         </div>
       </BentoCard>
 
-      <BentoCard className="bento-edu" delay={0.22}>
+      <div className="bento-workhead">
+        <p className="kicker">Selected work</p>
+        <Link to="/projects">All projects →</Link>
+      </div>
+
+      {FEATURED.map((project, index) => (
+        <ProjectCard
+          key={project.title}
+          className={`bento-proj bento-proj-${index}`}
+          project={project}
+          index={index}
+          delay={0.2 + index * 0.05}
+          tone={HOME_TONES[index]}
+        />
+      ))}
+
+      <BentoCard className="bento-edu" delay={0.36}>
         <p className="kicker">Path</p>
         <h2>Timeline</h2>
         <ul className="edu-list">
-          {TIMELINE.map((item) => (
+          {TIMELINE.toReversed().map((item) => (
             <li key={item.title}>
               <div>
                 <h3>{item.title}</h3>
@@ -72,10 +101,6 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </BentoCard>
-
-      <BentoCard className="bento-quote" accent delay={0.26}>
-        <p>“{PERSON.quote}”</p>
       </BentoCard>
     </div>
   )
