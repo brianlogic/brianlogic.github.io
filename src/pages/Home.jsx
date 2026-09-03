@@ -23,20 +23,13 @@ export default function Home() {
           </h1>
           <p className="bento-intro__role">{PERSON.role}</p>
         </div>
-        <ul className="bento-intro__facts">
-          <li>
-            <span>Focus</span>
-            <strong>{PERSON.focus}</strong>
-          </li>
-          <li>
-            <span>School</span>
-            <strong>{PERSON.school}</strong>
-          </li>
-          <li>
-            <span>Location</span>
-            <strong>{PERSON.location}</strong>
-          </li>
-        </ul>
+        <div className="bento-intro__facts">
+          <p className="bento-intro__major">{PERSON.focus}</p>
+          <div className="bento-intro__meta">
+            <p className="bento-intro__school">{PERSON.school}</p>
+            <p className="bento-intro__place">{PERSON.location}</p>
+          </div>
+        </div>
       </BentoCard>
 
       <BentoCard className="bento-about" delay={0.1}>

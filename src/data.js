@@ -18,7 +18,7 @@ export const PERSON = {
   linkedin: 'https://www.linkedin.com/in/brian-tran-756508244/',
   quote: 'If you want to do extraordinary things, it shouldn\'t be easy',
   about:
-    "Hey! I'm a student and full stack developer who likes quiet interfaces with a little personality. I care about type, motion that earns its place, and software that feels considered.",
+    "Hey! I'm a third year Computer Science student at the University of Virginia. I'm primarily a full-stack developer with experience building stateful web applications. I've interned the past 3 years at a subcontractor in a security-sensitive environment. I'm builidng up skills in deployment/DevOps and AI/ML.",
   photo: face,
   photoCaption: 'Brian Tran',
 }
@@ -116,7 +116,7 @@ export const PROJECTS = [
     title: 'Crisis Hotline Agent',
     month: '',
     period: '2024',
-    blurb: 'Landing page and booking flow for a coastal cafe, built as a class project.',
+    blurb: 'A crisis-support platform where an AI agent handles incoming calls, provides initial counseling, and generates transcripts for human counselors. Counselors can review calls, notes, and follow-up needs, mark cases as resolved, and view caller histories and snapshots for repeat callers.',
     tags: ['Next.js', 'Tailwind'],
     links: [
       { href: 'https://github.com/YuDavidCao/hotline-agent', label: 'Code' },
@@ -126,8 +126,8 @@ export const PROJECTS = [
   {
     title: 'TheCourseForum',
     month: '',
-    period: '2024',
-    blurb: 'Developed querying system for course reviews and ratings',
+    period: '2024-2026',
+    blurb: 'Introduced querying and filtering system for course reviews website at the University of Virginia. You can see the filtering system in action on the browse page.',
     tags: ['Python', 'Django', 'PostgreSQL', 'HTML', 'CSS'],
     links: [
       { href: 'https://thecourseforum.com/browse/', label: 'Live demo' },
