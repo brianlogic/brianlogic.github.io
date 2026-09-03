@@ -62,6 +62,10 @@
   color: var(--text);
 }
 
+.experience-body.bento-card {
+  overflow: visible;
+}
+
 .experience-body section + section {
   margin-top: 1.15rem;
 }

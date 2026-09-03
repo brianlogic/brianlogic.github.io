@@ -27,8 +27,8 @@ export default function Navbar() {
       className={`nav ${scrolled ? 'is-scrolled' : ''}`}
       initial={false}
       animate={{
-        backgroundColor: scrolled ? 'rgba(14, 19, 25, 0.72)' : 'rgba(14, 19, 25, 0)',
-        backdropFilter: scrolled ? 'blur(16px) saturate(1.3)' : 'blur(0px)',
+        backgroundColor: scrolled ? 'rgba(9, 9, 9, 0.78)' : 'rgba(9, 9, 9, 0)',
+        backdropFilter: scrolled ? 'blur(16px)' : 'blur(0px)',
         paddingTop: scrolled ? 10 : 28,
         paddingBottom: scrolled ? 10 : 28,
       }}

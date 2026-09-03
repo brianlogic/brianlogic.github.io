@@ -1,19 +1,19 @@
 :root {
-  --bg: #0e1319;
-  --bg-2: #141b24;
-  --card: #161e28;
-  --card-hover: #1c2632;
-  --pill: #1e2834;
-  --pill-active: #2a3848;
-  --accent: #1a4a5c;
-  --accent-2: #2a3568;
-  --accent-hover: #1e5870;
-  --name: #6ec8f0;
-  --pop: #5ee0c8;
-  --pop-2: #9b8cff;
-  --text: #e6eef5;
-  --muted: #8b9aab;
-  --line: rgba(230, 238, 245, 0.1);
+  --bg: #090909;
+  --bg-2: #111111;
+  --card: #141414;
+  --card-hover: #1c1c1c;
+  --pill: #1a1a1a;
+  --pill-active: #2c2c2c;
+  --accent: #1a1a1a;
+  --accent-2: #222222;
+  --accent-hover: #242424;
+  --name: #f4f4f4;
+  --pop: #d6d6d6;
+  --pop-2: #a3a3a3;
+  --text: #f5f5f5;
+  --muted: #8c8c8c;
+  --line: rgba(255, 255, 255, 0.12);
   --radius: 18px;
   --nav-radius: 999px;
   --font: system-ui, -apple-system, Segoe UI, sans-serif;
@@ -39,11 +39,7 @@ body,
 
 body {
   margin: 0;
-  background:
-    radial-gradient(900px 480px at 82% -8%, rgba(110, 200, 240, 0.18), transparent 55%),
-    radial-gradient(520px 340px at 6% 14%, rgba(155, 140, 255, 0.12), transparent 50%),
-    radial-gradient(700px 420px at 0% 92%, rgba(94, 224, 200, 0.1), transparent 50%),
-    var(--bg);
+  background: var(--bg);
 }
 
 body::after {
@@ -82,8 +78,8 @@ textarea:focus-visible {
 }
 
 ::selection {
-  background: var(--name);
-  color: #0c141c;
+  background: #f5f5f5;
+  color: #090909;
 }
 
 .app-shell {

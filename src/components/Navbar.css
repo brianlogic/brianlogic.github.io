@@ -77,7 +77,7 @@
   bottom: 0;
   height: 1.5px;
   transform-origin: 0 50%;
-  background: linear-gradient(90deg, transparent, var(--pop-2), var(--name), var(--pop), transparent);
+  background: var(--text);
   pointer-events: none;
 }
 

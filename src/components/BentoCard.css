@@ -15,42 +15,21 @@
   background: var(--card-hover);
 }
 
-.bento-card.is-accent {
-  background: linear-gradient(155deg, var(--accent) 0%, var(--accent-2) 100%);
-  border-color: color-mix(in srgb, var(--name) 18%, transparent);
-  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--name) 18%, transparent);
-}
-
-.bento-card.is-accent:hover {
-  background: linear-gradient(155deg, var(--accent-hover) 0%, var(--accent-2) 100%);
-  border-color: color-mix(in srgb, var(--pop) 28%, transparent);
-}
-
-.bento-card.is-cyan {
-  background: linear-gradient(165deg, color-mix(in srgb, var(--name) 18%, var(--card)), var(--card));
-  border-color: color-mix(in srgb, var(--name) 32%, transparent);
-}
-
-.bento-card.is-mint {
-  background: linear-gradient(165deg, color-mix(in srgb, var(--pop) 16%, var(--card)), var(--card));
-  border-color: color-mix(in srgb, var(--pop) 30%, transparent);
-}
-
+.bento-card.is-accent,
+.bento-card.is-cyan,
+.bento-card.is-mint,
 .bento-card.is-violet {
-  background: linear-gradient(165deg, color-mix(in srgb, var(--pop-2) 18%, var(--card)), var(--card));
-  border-color: color-mix(in srgb, var(--pop-2) 32%, transparent);
+  background: var(--card);
+  border-color: var(--line);
+  box-shadow: none;
 }
 
-.bento-card.is-cyan:hover {
-  background: linear-gradient(165deg, color-mix(in srgb, var(--name) 26%, var(--card)), var(--card-hover));
-}
-
-.bento-card.is-mint:hover {
-  background: linear-gradient(165deg, color-mix(in srgb, var(--pop) 24%, var(--card)), var(--card-hover));
-}
-
+.bento-card.is-accent:hover,
+.bento-card.is-cyan:hover,
+.bento-card.is-mint:hover,
 .bento-card.is-violet:hover {
-  background: linear-gradient(165deg, color-mix(in srgb, var(--pop-2) 26%, var(--card)), var(--card-hover));
+  background: var(--card-hover);
+  border-color: color-mix(in srgb, var(--name) 28%, transparent);
 }
 
 .bento-card .kicker {

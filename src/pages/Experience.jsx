@@ -9,7 +9,7 @@ export default function Experience() {
       <BentoCard className="experience-lead" tone="cyan" immediate>
         <p className="kicker">Experience</p>
         <h1>What I worked on</h1>
-        <p>Roles, systems, and how the pieces connected. Add diagrams, screenshots, and write-ups in data.js.</p>
+        <p>Roles, systems, and how the pieces connected.</p>
       </BentoCard>
 
       {EXPERIENCE.map((job, index) => (
@@ -48,6 +48,7 @@ export default function Experience() {
               <FlowDiagram
                 caption={job.diagram.caption}
                 nodes={job.diagram.nodes}
+                layers={job.diagram.layers}
                 image={job.diagram.image}
                 imageAlt={job.diagram.imageAlt}
               />

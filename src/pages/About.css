@@ -66,7 +66,7 @@
 }
 
 .kicker-on-accent {
-  color: color-mix(in srgb, white 72%, var(--name));
+  color: var(--muted);
 }
 
 .about-likes ul {
