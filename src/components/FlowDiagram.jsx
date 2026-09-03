@@ -137,6 +137,7 @@ function useWires(rootRef, edges) {
               label: edge.label,
               lx,
               ly,
+              tone: edge.tone || '',
             },
           ]
         }),
@@ -167,21 +168,32 @@ function WireBoard({ className, edges, children }) {
     <div ref={rootRef} className={className}>
       <svg className="wires" aria-hidden="true">
         <defs>
-          <marker
-            id={markerId}
-            viewBox="0 0 10 10"
-            refX="9"
-            refY="5"
-            markerWidth="8"
-            markerHeight="8"
-            orient="auto"
-          >
-            <path d="M 0 1.2 L 10 5 L 0 8.8 z" fill="currentColor" />
-          </marker>
+          {['', 'ok', 'warn'].map((tone) => (
+            <marker
+              key={tone || 'default'}
+              id={tone ? `${markerId}-${tone}` : markerId}
+              viewBox="0 0 10 10"
+              refX="9"
+              refY="5"
+              markerWidth="8"
+              markerHeight="8"
+              orient="auto"
+            >
+              <path d="M 0 1.2 L 10 5 L 0 8.8 z" className={tone ? `wire-head is-${tone}` : 'wire-head'} />
+            </marker>
+          ))}
         </defs>
         {wires.map((wire, index) => (
-          <g key={`${wire.d}-${index}`}>
-            <path d={wire.d} fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round" markerEnd={`url(#${markerId})`} />
+          <g key={`${wire.d}-${index}`} className={wire.tone ? `is-${wire.tone}` : undefined}>
+            <path
+              d={wire.d}
+              className="wire-line"
+              fill="none"
+              strokeWidth="1.85"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              markerEnd={`url(#${wire.tone ? `${markerId}-${wire.tone}` : markerId})`}
+            />
             {wire.label ? (
               <text x={wire.lx} y={wire.ly} textAnchor="middle">
                 {wire.label}
@@ -274,12 +286,12 @@ function Flowchart({ layer }) {
   const edges = [
     ...start.slice(1).map((_, index) => ({ from: `start-${index}`, to: `start-${index + 1}` })),
     lastStart ? { from: lastStart, to: 'rgate' } : null,
-    { from: 'rgate', to: 'back', label: 'Reject', fromSide: 'left', toSide: 'top' },
-    { from: 'rgate', to: firstAfter, label: 'Accept', fromSide: 'right', toSide: 'top' },
+    { from: 'rgate', to: 'back', label: 'Reject', fromSide: 'left', toSide: 'top', tone: 'warn' },
+    { from: 'rgate', to: firstAfter, label: 'Accept', fromSide: 'right', toSide: 'top', tone: 'ok' },
     ...after.slice(1).map((_, index) => ({ from: `after-${index}`, to: `after-${index + 1}` })),
     lastAfter ? { from: lastAfter, to: 'agate' } : null,
-    { from: 'agate', to: 'back', label: 'Reject', fromSide: 'left', toSide: 'bottom' },
-    { from: 'agate', to: 'done', label: 'Accept' },
+    { from: 'agate', to: 'back', label: 'Reject', fromSide: 'left', toSide: 'bottom', tone: 'warn' },
+    { from: 'agate', to: 'done', label: 'Accept', tone: 'ok' },
   ].filter(Boolean)
 
   return (

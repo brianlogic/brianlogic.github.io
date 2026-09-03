@@ -1,9 +1,14 @@
 .flow {
+  --diagram-blue: #7eb4ff;
+  --diagram-mint: #7dcec4;
+  --diagram-violet: #b7a8ff;
+  --diagram-ok: #7dcec4;
+  --diagram-warn: #e0b06a;
   margin: 1.1rem 0 0;
   padding: 1rem 1.05rem;
   border-radius: 14px;
-  background: color-mix(in srgb, var(--name) 8%, var(--bg));
-  border: 1px solid color-mix(in srgb, var(--name) 22%, transparent);
+  background: color-mix(in srgb, var(--diagram-blue) 6%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--diagram-blue) 16%, var(--line));
   overflow: visible;
 }
 
@@ -92,7 +97,7 @@
   padding: 0.95rem 1rem 1.05rem;
   border-radius: 14px;
   background: color-mix(in srgb, var(--card) 88%, transparent);
-  border: 1px solid color-mix(in srgb, var(--name) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--diagram-blue) 12%, var(--line));
 }
 
 .arch-band.is-flowchart,
@@ -101,12 +106,28 @@
   overflow: visible;
 }
 
+.arch-band.is-flowchart {
+  border-color: color-mix(in srgb, var(--diagram-mint) 16%, var(--line));
+}
+
+.arch-band.is-strip {
+  border-color: color-mix(in srgb, var(--diagram-violet) 16%, var(--line));
+}
+
 .arch-band::before {
   content: '';
   position: absolute;
   inset: 0 auto 0 0;
   width: 3px;
-  background: var(--text);
+  background: var(--diagram-blue);
+}
+
+.arch-band.is-flowchart::before {
+  background: var(--diagram-mint);
+}
+
+.arch-band.is-strip::before {
+  background: var(--diagram-violet);
 }
 
 .arch-head {
@@ -119,8 +140,16 @@
   font-size: 0.64rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--name);
+  color: var(--diagram-blue);
   font-weight: 600;
+}
+
+.arch-band.is-flowchart .arch-kicker {
+  color: var(--diagram-mint);
+}
+
+.arch-band.is-strip .arch-kicker {
+  color: var(--diagram-violet);
 }
 
 .arch .arch-head h3 {
@@ -403,7 +432,25 @@
 .arch-chip.is-hub {
   min-width: 10rem;
   border-width: 1.5px;
-  border-color: var(--text);
+  border-color: var(--diagram-blue);
+  background: color-mix(in srgb, var(--diagram-blue) 10%, var(--card));
+}
+
+.stack-map__cell.is-entra .arch-chip {
+  border-color: color-mix(in srgb, var(--diagram-violet) 55%, var(--line));
+}
+
+.stack-map__cell.is-graph .arch-chip {
+  border-color: color-mix(in srgb, var(--diagram-mint) 55%, var(--line));
+}
+
+.stack-map__cell.is-browser .arch-chip {
+  border-color: color-mix(in srgb, var(--diagram-blue) 40%, var(--line));
+}
+
+.stack-map__cell.is-orm .arch-chip,
+.stack-map__cell.is-db .arch-chip {
+  border-color: color-mix(in srgb, var(--diagram-blue) 32%, var(--line));
 }
 
 .wires {
@@ -414,7 +461,41 @@
   overflow: visible;
   pointer-events: none;
   z-index: 0;
-  color: color-mix(in srgb, var(--text) 88%, transparent);
+  color: color-mix(in srgb, var(--diagram-blue) 82%, var(--text));
+}
+
+.arch-band.is-flowchart .wires {
+  color: color-mix(in srgb, var(--diagram-mint) 55%, var(--text));
+}
+
+.arch-band.is-strip .wires {
+  color: color-mix(in srgb, var(--diagram-violet) 80%, var(--text));
+}
+
+.wires .wire-line {
+  fill: none;
+  stroke: currentColor;
+}
+
+.wires .wire-head {
+  fill: currentColor;
+  stroke: none;
+}
+
+.wires g.is-ok {
+  color: var(--diagram-ok);
+}
+
+.wires g.is-warn {
+  color: var(--diagram-warn);
+}
+
+.wires .wire-head.is-ok {
+  fill: var(--diagram-ok);
+}
+
+.wires .wire-head.is-warn {
+  fill: var(--diagram-warn);
 }
 
 .wires text {
@@ -425,6 +506,14 @@
   paint-order: stroke fill;
   stroke: var(--card);
   stroke-width: 4px;
+}
+
+.wires g.is-ok text {
+  fill: var(--diagram-ok);
+}
+
+.wires g.is-warn text {
+  fill: var(--diagram-warn);
 }
 
 .stack-map,
@@ -499,7 +588,7 @@
   min-width: 10.5rem;
   max-width: 13.5rem;
   padding: 0.55rem 0.9rem;
-  border: 1.5px solid var(--text);
+  border: 1.5px solid color-mix(in srgb, var(--diagram-blue) 38%, var(--text));
   border-radius: 6px;
   background: var(--card);
   color: var(--text);
@@ -522,10 +611,14 @@
 .chart-box.is-start,
 .chart-box.is-end {
   border-radius: 999px;
+  border-color: var(--diagram-ok);
+  background: color-mix(in srgb, var(--diagram-ok) 12%, var(--card));
 }
 
 .chart-box.is-warn {
   border-style: dashed;
+  border-color: var(--diagram-warn);
+  background: color-mix(in srgb, var(--diagram-warn) 10%, var(--card));
 }
 
 .chart-dia {
@@ -541,8 +634,8 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  fill: var(--card);
-  stroke: var(--text);
+  fill: color-mix(in srgb, var(--diagram-blue) 10%, var(--card));
+  stroke: var(--diagram-blue);
   stroke-width: 1.6;
 }
 
@@ -569,7 +662,7 @@
 
 .ship-lane.is-local {
   padding-right: 1.1rem;
-  border-right: 1px dashed var(--line);
+  border-right: 1px dashed color-mix(in srgb, var(--diagram-mint) 35%, var(--line));
 }
 
 .ship-kicker {
@@ -577,8 +670,20 @@
   font-size: 0.64rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--name);
+  color: var(--diagram-violet);
   font-weight: 600;
+}
+
+.ship-lane.is-local .ship-kicker {
+  color: var(--diagram-mint);
+}
+
+.ship-lane.is-local .arch-chip {
+  border-color: color-mix(in srgb, var(--diagram-mint) 45%, var(--line));
+}
+
+.ship-row .arch-chip {
+  border-color: color-mix(in srgb, var(--diagram-violet) 45%, var(--line));
 }
 
 .ship-row {
@@ -638,7 +743,7 @@
     border-right: none;
     padding-right: 0;
     padding-bottom: 0.95rem;
-    border-bottom: 1px dashed var(--line);
+    border-bottom: 1px dashed color-mix(in srgb, var(--diagram-mint) 35%, var(--line));
   }
 
   .ship-row {
