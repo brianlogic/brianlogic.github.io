@@ -3,6 +3,7 @@ import BentoCard from '../components/BentoCard'
 import ProjectCard from '../components/ProjectCard'
 import { IconGitHub, IconLinkedIn, IconMail } from '../components/SocialIcons'
 import TechIcon from '../components/TechIcon'
+import Wahoowa from '../components/Wahoowa'
 import { PERSON, PROJECTS, TECH, TIMELINE } from '../data'
 import './Home.css'
 
@@ -26,7 +27,7 @@ export default function Home() {
         <div className="bento-intro__facts">
           <p className="bento-intro__major">{PERSON.focus}</p>
           <div className="bento-intro__meta">
-            <p className="bento-intro__school">{PERSON.school}</p>
+            <Wahoowa className="bento-intro__school" text={PERSON.school} />
             <p className="bento-intro__place">{PERSON.location}</p>
           </div>
         </div>

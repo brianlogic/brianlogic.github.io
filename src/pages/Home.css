@@ -77,6 +77,10 @@
   color: var(--text);
 }
 
+.bento-card.bento-intro {
+  overflow: visible;
+}
+
 .bento-intro__meta {
   display: flex;
   align-items: baseline;
