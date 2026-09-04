@@ -1,0 +1,97 @@
+.experience-carousel {
+  margin-top: 1.45rem;
+  outline: none;
+}
+
+.experience-carousel .kicker {
+  margin-bottom: 0.75rem;
+}
+
+.experience-carousel__stage {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.experience-carousel__slide {
+  margin: 0;
+  min-width: 0;
+}
+
+.experience-carousel__frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  padding: 1rem 0.8rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--name) 6%, var(--card));
+  border: 1px solid color-mix(in srgb, var(--name) 10%, transparent);
+}
+
+.experience-carousel__frame img {
+  display: block;
+  width: min(100%, 240px);
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px color-mix(in srgb, #000 40%, transparent);
+}
+
+.experience-carousel__slide figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: center;
+}
+
+.experience-carousel__nav {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--name) 10%, transparent);
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.experience-carousel__nav:hover {
+  background: color-mix(in srgb, var(--name) 18%, transparent);
+  color: var(--name);
+}
+
+.experience-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+}
+
+.experience-carousel__dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--name) 22%, transparent);
+  cursor: pointer;
+  transition: width 0.22s ease, background 0.22s ease;
+}
+
+.experience-carousel__dot.is-active {
+  width: 18px;
+  background: var(--name);
+}
+
+@media (max-width: 640px) {
+  .experience-carousel__frame {
+    min-height: 0;
+  }
+
+  .experience-carousel__frame img {
+    width: min(100%, 220px);
+  }
+}

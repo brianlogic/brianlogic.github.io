@@ -23,13 +23,11 @@ export default function Home() {
             {PERSON.first} <em>{PERSON.last}</em>
           </h1>
           <p className="bento-intro__role">{PERSON.role}</p>
+          <p className="bento-intro__place">{PERSON.location}</p>
         </div>
         <div className="bento-intro__facts">
           <p className="bento-intro__major">{PERSON.focus}</p>
-          <div className="bento-intro__meta">
-            <Wahoowa className="bento-intro__school" text={PERSON.school} />
-            <p className="bento-intro__place">{PERSON.location}</p>
-          </div>
+          <Wahoowa className="bento-intro__school" text={PERSON.school} />
         </div>
       </BentoCard>
 

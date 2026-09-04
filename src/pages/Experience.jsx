@@ -1,4 +1,5 @@
 import BentoCard from '../components/BentoCard'
+import ExperienceCarousel from '../components/ExperienceCarousel'
 import FlowDiagram from '../components/FlowDiagram'
 import { EXPERIENCE } from '../data'
 import './Experience.css'
@@ -54,12 +55,9 @@ export default function Experience() {
               />
             ) : null}
 
-            {job.images?.filter((item) => item.src).map((item) => (
-              <figure key={item.src} className="experience-shot">
-                <img src={item.src} alt={item.alt || ''} />
-                {item.caption ? <figcaption>{item.caption}</figcaption> : null}
-              </figure>
-            ))}
+            {job.images?.some((item) => item.src) ? (
+              <ExperienceCarousel images={job.images} />
+            ) : null}
           </BentoCard>
         </article>
       ))}

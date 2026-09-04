@@ -3,6 +3,11 @@ import face from './assets/face.jpg'
 import happiness from './assets/happiness.jpg'
 import japan from './assets/japan.jpg'
 import photoshoot from './assets/photoshoot.JPG'
+import screen1 from './assets/screen1.png'
+import screen2 from './assets/screen2.png'
+import screen3 from './assets/screen3.png'
+import screen4 from './assets/screen4.png'
+import screen5 from './assets/screen5.png'
 
 export const PERSON = {
   first: 'Brian',
@@ -80,8 +85,8 @@ export const PROJECTS = [
     title: 'Cursor Dependency Risk Extension',
     month: '',
     period: 'May 2026 - Present',
-    blurb: 'A calm dashboard for a fictional logistics studio — charts, filters, and a dark UI.',
-    tags: ['React', 'Vite', 'CSS'],
+    blurb: 'A calm dashboard for a fictional logist ics studio — charts, filters, and a dark UI.',
+    tags: ['TypeScript', 'Cursor API'],
     links: [
       { href: 'https://marketplace.visualstudio.com/items?itemName=BT23.dependency-version-risk', label: 'Live demo' },
     ],
@@ -91,9 +96,9 @@ export const PROJECTS = [
   {
     title: 'Modeling Naval Systems',
     month: '',
-    period: '2024',
-    blurb: 'A tiny markdown notebook with keyboard-first navigation and local-first storage.',
-    tags: ['TypeScript', 'IndexedDB'],
+    period: 'Feb 2025 - Jul 2025',
+    blurb: 'Developed backend for full-stack web application using Django and Django REST Framework. Cleaned and normalized data from various sources and visualized data in SysML format.',
+    tags: ['React', 'Python', 'Django', 'Django REST Framework', 'Docker', 'PostgreSQL', 'SysML'],
     links: [
       { href: 'https://github.com/brianlogic/Modeling-Navy-Computing/tree/main', label: 'Code' },
     ],
@@ -110,7 +115,6 @@ export const PROJECTS = [
       { href: 'https://github.com/brianlogic/HoosMap', label: 'Code' },
     ],
     image: '',
-    featured: true,
   },
   {
     title: 'Crisis Hotline Agent',
@@ -126,13 +130,14 @@ export const PROJECTS = [
   {
     title: 'TheCourseForum',
     month: '',
-    period: '2024-2026',
+    period: 'Sep 2024 - Feb 2026',
     blurb: 'Introduced querying and filtering system for course reviews website at the University of Virginia. You can see the filtering system in action on the browse page.',
     tags: ['Python', 'Django', 'PostgreSQL', 'HTML', 'CSS'],
     links: [
       { href: 'https://thecourseforum.com/browse/', label: 'Live demo' },
     ],
     image: '',
+    featured: true,
   },
 ]
 
@@ -288,7 +293,33 @@ export const EXPERIENCE = [
         { id: 'act', label: 'Get involved' },
       ],
     },
-    images: [],
+    images: [
+      {
+        src: screen2,
+        alt: 'Create a new camera station form',
+        caption: 'Create a camera station',
+      },
+      {
+        src: screen1,
+        alt: 'Camera station update form with field data',
+        caption: 'Update station status',
+      },
+      {
+        src: screen4,
+        alt: 'Snow leopard study with sightings list',
+        caption: 'Study and sightings',
+      },
+      {
+        src: screen3,
+        alt: 'Wildlife sighting form for a snow leopard',
+        caption: 'Log a wildlife sighting',
+      },
+      {
+        src: screen5,
+        alt: 'Rebait form for updating a camera station in the field',
+        caption: 'Rebait a station',
+      },
+    ],
   },
 ]
 

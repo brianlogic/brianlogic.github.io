@@ -55,9 +55,7 @@ export default function ProjectCard({
           <img src={project.image} alt={project.imageAlt || project.title} />
         </div>
       ) : null}
-      <span>
-        0{index + 1} / {when}
-      </span>
+      {when ? <span>{when}</span> : null}
       <h2>{project.title}</h2>
       <p>{project.blurb}</p>
       <div className="project-footer">

@@ -75,18 +75,3 @@
   font-size: 1.05rem;
 }
 
-.experience-shot {
-  margin: 1.1rem 0 0;
-}
-
-.experience-shot img {
-  display: block;
-  width: 100%;
-  border-radius: 12px;
-}
-
-.experience-shot figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.78rem;
-  color: var(--muted);
-}
