@@ -4,7 +4,7 @@ import ProjectCard from '../components/ProjectCard'
 import { IconGitHub, IconLinkedIn, IconMail } from '../components/SocialIcons'
 import TechIcon from '../components/TechIcon'
 import Wahoowa from '../components/Wahoowa'
-import { PERSON, PROJECTS, TECH, TIMELINE } from '../data'
+import { ABOUT, PERSON, PROJECTS, TECH, TIMELINE } from '../data'
 import './Home.css'
 
 const FEATURED = PROJECTS.filter((project) => project.featured).slice(0, 3)
@@ -35,34 +35,6 @@ export default function Home() {
         <p>{PERSON.about}</p>
       </BentoCard>
 
-      <BentoCard className="bento-tech" tone="cyan" delay={0.14}>
-        <p className="kicker">Stack</p>
-        <h2>Tools I use</h2>
-        <div className="tech-grid">
-          {TECH.map((item) => (
-            <TechIcon key={item.id} id={item.id} label={item.label} />
-          ))}
-        </div>
-      </BentoCard>
-
-      <BentoCard className="bento-links" tone="mint" delay={0.18}>
-        <p className="kicker">Contact</p>
-        <div className="link-list">
-          <a href={PERSON.github} target="_blank" rel="noreferrer">
-            <IconGitHub />
-            GitHub
-          </a>
-          <a href={PERSON.linkedin} target="_blank" rel="noreferrer">
-            <IconLinkedIn />
-            LinkedIn
-          </a>
-          <a href={`mailto:${PERSON.email}`}>
-            <IconMail />
-            Email
-          </a>
-        </div>
-      </BentoCard>
-
       <div className="bento-workhead">
         <p className="kicker">Selected work</p>
         <Link to="/projects">All projects →</Link>
@@ -74,10 +46,46 @@ export default function Home() {
           className={`bento-proj bento-proj-${index}`}
           project={project}
           index={index}
-          delay={0.2 + index * 0.05}
+          delay={0.14 + index * 0.05}
           tone={HOME_TONES[index]}
+          teaser
         />
       ))}
+
+      <BentoCard className="bento-tech" tone="cyan" delay={0.3}>
+        <p className="kicker">Stack</p>
+        <h2>Tools I use</h2>
+        <div className="tech-grid">
+          {TECH.map((item) => (
+            <TechIcon key={item.id} id={item.id} label={item.label} />
+          ))}
+        </div>
+      </BentoCard>
+
+      <BentoCard className="bento-links" tone="mint" delay={0.34}>
+        <p className="kicker">Contact</p>
+        <div className="link-list">
+          {ABOUT.links.map((item) => {
+            const Icon = { Email: IconMail, GitHub: IconGitHub, LinkedIn: IconLinkedIn }[item.label]
+            const external = item.href.startsWith('http')
+
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noreferrer' : undefined}
+              >
+                {Icon ? <Icon /> : null}
+                <span>
+                  <strong>{item.label}</strong>
+                  <em>{item.display || item.href}</em>
+                </span>
+              </a>
+            )
+          })}
+        </div>
+      </BentoCard>
 
       <BentoCard className="bento-edu" delay={0.36}>
         <p className="kicker">Path</p>

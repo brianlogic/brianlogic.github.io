@@ -40,9 +40,11 @@ export default function ProjectCard({
   delay = 0,
   tone,
   className = '',
+  teaser = false,
 }) {
   const links = projectLinks(project)
   const when = projectWhen(project)
+  const description = project.description || project.blurb
 
   return (
     <BentoCard
@@ -57,7 +59,24 @@ export default function ProjectCard({
       ) : null}
       {when ? <span>{when}</span> : null}
       <h2>{project.title}</h2>
-      <p>{project.blurb}</p>
+      {teaser ? (
+        description ? <p>{description}</p> : null
+      ) : (
+        <div className="project-copy">
+          {description ? (
+            <section>
+              <p className="kicker">Description</p>
+              <p>{description}</p>
+            </section>
+          ) : null}
+          {project.did ? (
+            <section>
+              <p className="kicker">What I did</p>
+              <p>{project.did}</p>
+            </section>
+          ) : null}
+        </div>
+      )}
       <div className="project-footer">
         <div className="project-tags">
           {project.tags.map((tag) => (

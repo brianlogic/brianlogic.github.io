@@ -21,7 +21,6 @@ export const PERSON = {
   now: 'Studying Computer Science at UVA with an applied math minor',
   github: 'https://github.com/brianlogic',
   linkedin: 'https://www.linkedin.com/in/brian-tran-756508244/',
-  quote: 'If you want to do extraordinary things, it shouldn\'t be easy',
   about:
     "Hey! I'm a third year Computer Science student at the University of Virginia. I'm primarily a full-stack developer with experience building stateful web applications. I've interned the past 3 years at a subcontractor in a security-sensitive environment. I'm builidng up skills in deployment/DevOps and AI/ML.",
   photo: face,
@@ -85,7 +84,8 @@ export const PROJECTS = [
     title: 'Cursor Dependency Risk Extension',
     month: '',
     period: 'May 2026 - Present',
-    blurb: 'A calm dashboard for a fictional logist ics studio — charts, filters, and a dark UI.',
+    description: 'Cursor/VS Code extension that checks for dependency version risks in JavaScript projects and rolls back the version if a risk is found.',
+    did: 'Created extension using Typescript to query OSV.dev API for dependency version risks. Rolled back dependecy version if a risk is found. Utilized Cursor API to safely bump dependency versions in a project.',
     tags: ['TypeScript', 'Cursor API'],
     links: [
       { href: 'https://marketplace.visualstudio.com/items?itemName=BT23.dependency-version-risk', label: 'Live demo' },
@@ -97,7 +97,8 @@ export const PROJECTS = [
     title: 'Modeling Naval Systems',
     month: '',
     period: 'Feb 2025 - Jul 2025',
-    blurb: 'Developed backend for full-stack web application using Django and Django REST Framework. Cleaned and normalized data from various sources and visualized data in SysML format.',
+    description: 'Full-stack web application for modeling naval systems and visualizing them in SysML.',
+    did: 'Built the Django and Django REST Framework backend, cleaned and normalized data from multiple sources, and visualized it in SysML.',
     tags: ['React', 'Python', 'Django', 'Django REST Framework', 'Docker', 'PostgreSQL', 'SysML'],
     links: [
       { href: 'https://github.com/brianlogic/Modeling-Navy-Computing/tree/main', label: 'Code' },
@@ -108,8 +109,9 @@ export const PROJECTS = [
   {
     title: 'HoosMap',
     month: '',
-    period: '2024',
-    blurb: 'Landing page and booking flow for a coastal cafe, built as a class project.',
+    period: 'March 2025',
+    description: 'Landing page and booking flow for a coastal cafe, built as a class project.',
+    did: '',
     tags: ['Next.js', 'Tailwind'],
     links: [
       { href: 'https://github.com/brianlogic/HoosMap', label: 'Code' },
@@ -120,7 +122,8 @@ export const PROJECTS = [
     title: 'Crisis Hotline Agent',
     month: '',
     period: '2024',
-    blurb: 'A crisis-support platform where an AI agent handles incoming calls, provides initial counseling, and generates transcripts for human counselors. Counselors can review calls, notes, and follow-up needs, mark cases as resolved, and view caller histories and snapshots for repeat callers.',
+    description: 'A crisis-support platform where an AI agent handles incoming calls, provides initial counseling, and generates transcripts for human counselors. Counselors can review calls, notes, and follow-up needs, mark cases as resolved, and view caller histories and snapshots for repeat callers.',
+    did: '',
     tags: ['Next.js', 'Tailwind'],
     links: [
       { href: 'https://github.com/YuDavidCao/hotline-agent', label: 'Code' },
@@ -131,7 +134,8 @@ export const PROJECTS = [
     title: 'TheCourseForum',
     month: '',
     period: 'Sep 2024 - Feb 2026',
-    blurb: 'Introduced querying and filtering system for course reviews website at the University of Virginia. You can see the filtering system in action on the browse page.',
+    description: 'Course reviews website at the University of Virginia.',
+    did: 'Introduced a querying and filtering system. You can see it in action on the browse page.',
     tags: ['Python', 'Django', 'PostgreSQL', 'HTML', 'CSS'],
     links: [
       { href: 'https://thecourseforum.com/browse/', label: 'Live demo' },
@@ -324,30 +328,16 @@ export const EXPERIENCE = [
 ]
 
 export const ABOUT = {
-  lead: 'Outside of internships and class, I like building things with a little personality — and I take on more than I probably should.',
+  body: 'Thanks for checking out my portfolio! Outside of internships, classes, and projects, I like to watch basketball, play games, and be active. I lift weights and enjoy most sports. Don\'t hesitate to reach out!',
   photos: [
     { src: photoshoot, alt: 'Brian in a suit outdoors' },
     { src: japan, alt: 'Brian in Japan' },
     { src: happiness, alt: 'Brian on a summer afternoon' },
     { src: cold, alt: 'Brian in a coat at night' },
   ],
-  cards: [
-    {
-      title: 'Hackathons',
-      body: 'Ran my high school hackathon. Add the story: scale, what you organized, what you’d do differently.',
-    },
-    {
-      title: 'Science fair',
-      body: '3rd place in the regional science and engineering fair. Drop in the project title and a one-liner on what it was.',
-    },
-    {
-      title: 'Course load',
-      body: '13 AP classes in high school. Not a personality, just a fact — replace this with whatever you actually want people to know.',
-    },
-    {
-      title: 'Now',
-      body: 'Computer Science at UVA with an applied math minor. Add clubs, teams, or the random stuff filling the calendar.',
-    },
+  links: [
+    { label: 'Email', href: `mailto:${PERSON.email}`, display: PERSON.email },
+    { label: 'GitHub', href: PERSON.github, display: PERSON.github.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') },
+    { label: 'LinkedIn', href: PERSON.linkedin, display: PERSON.linkedin.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') },
   ],
-  likes: ['Quiet interfaces', 'Type', 'Motion that earns its place', 'Tools people actually use'],
 }

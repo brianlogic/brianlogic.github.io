@@ -35,6 +35,15 @@
   font-weight: 600;
 }
 
+.project-copy {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.project-copy .kicker {
+  margin-bottom: 0.3rem;
+}
+
 .project-footer {
   display: flex;
   flex-wrap: wrap;
