@@ -82,7 +82,6 @@ export const TIMELINE = [
 export const PROJECTS = [
   {
     title: 'Cursor Dependency Risk Extension',
-    month: '',
     period: 'May 2026 - Present',
     description: 'Cursor/VS Code extension that checks for dependency version risks in JavaScript projects and rolls back the version if a risk is found.',
     did: 'Created extension using Typescript to query OSV.dev API for dependency version risks. Rolled back dependecy version if a risk is found. Utilized Cursor API to safely bump dependency versions in a project.',
@@ -95,7 +94,6 @@ export const PROJECTS = [
   },
   {
     title: 'Modeling Naval Systems',
-    month: '',
     period: 'Feb 2025 - Jul 2025',
     description: 'Full-stack web application for modeling naval systems and visualizing them in SysML.',
     did: 'Built the Django and Django REST Framework backend, cleaned and normalized data from multiple sources, and visualized it in SysML.',
@@ -108,10 +106,9 @@ export const PROJECTS = [
   },
   {
     title: 'HoosMap',
-    month: '',
     period: 'March 2025',
-    description: 'Landing page and booking flow for a coastal cafe, built as a class project.',
-    did: '',
+    description: 'HoosMap provides an interactive map with activities and events. Users can filter through upcoming events with a search and filters provided by UVA events website.',
+    did: 'Built CRUD endpoints for users, events, clubs, bookings using Flask, Firebase, and ChromaDB. Developed integration and unit tests for site.',
     tags: ['Next.js', 'Tailwind'],
     links: [
       { href: 'https://github.com/brianlogic/HoosMap', label: 'Code' },
@@ -120,11 +117,10 @@ export const PROJECTS = [
   },
   {
     title: 'Crisis Hotline Agent',
-    month: '',
-    period: '2024',
+    period: 'March 2026',
     description: 'A crisis-support platform where an AI agent handles incoming calls, provides initial counseling, and generates transcripts for human counselors. Counselors can review calls, notes, and follow-up needs, mark cases as resolved, and view caller histories and snapshots for repeat callers.',
-    did: '',
-    tags: ['Next.js', 'Tailwind'],
+    did: 'Developed full-stack application using Next.js, Tailwind, and PostgreSQL. Implemented analytics dashboard for human-opoerator. Integrated phone number service with ElevenLabs voice generation API.',
+    tags: ['Next.js', 'Tailwind', 'PostgreSQL', 'ElevenLabs'],
     links: [
       { href: 'https://github.com/YuDavidCao/hotline-agent', label: 'Code' },
     ],
@@ -132,7 +128,6 @@ export const PROJECTS = [
   },
   {
     title: 'TheCourseForum',
-    month: '',
     period: 'Sep 2024 - Feb 2026',
     description: 'Course reviews website at the University of Virginia.',
     did: 'Introduced a querying and filtering system. You can see it in action on the browse page.',
@@ -148,9 +143,9 @@ export const PROJECTS = [
 export const EXPERIENCE = [
   {
     id: 'northpoint-2026',
-    org: 'NorthPoint Technology LLC',
+    org: 'North Point Technology LLC',
     role: 'Full Stack Developer Intern',
-    dates: 'January 2026 – Present',
+    dates: 'May 2026 - August 2026',
     summary:
       'Built an internal forms platform: Entra sign-in, a configurable form catalog, and a review path from draft to accepted. I owned the app, the data layer, Microsoft Graph integrations, and the Docker path onto EC2.',
     highlights: [
@@ -241,33 +236,39 @@ export const EXPERIENCE = [
   },
   {
     id: 'northpoint-2024',
-    org: 'NorthPoint Technology LLC',
+    org: 'North Point Technology LLC',
     role: 'Software Engineer Intern',
-    dates: 'June 2024 – August 2024',
+    dates: 'June 2024 - August 2024',
     summary:
-      'Built web scraping tools to find job openings across prime contractors and surface them for the team.',
+      'Built Python scrapers with Selenium and Beautiful Soup to pull job requisitions from defense prime contractors. Scripts ran daily, logged each run, and emailed the team.',
     highlights: [
-      'Collected and normalized listings from contractor career pages.',
-      'Turned noisy HTML into structured openings the team could search.',
+      'Found internal APIs on some career sites and called those directly instead of walking the page.',
+      'Used Selenium and Beautiful Soup for sites that needed browser automation or HTML selection.',
+      'Daily scheduled runs with logging and email so new requisitions showed up without checking each site.',
     ],
-    stack: ['Python', 'Web scraping', 'Data cleaning'],
+    stack: ['Python', 'Selenium', 'Beautiful Soup'],
     sections: [
       {
-        heading: 'The problem',
-        body: 'Prime contractor job pages were scattered and inconsistent. The team needed a single place to see what was open without checking each site by hand.',
-      },
-      {
-        heading: 'The pipeline',
-        body: 'Scrapers pulled listings, a cleaner normalized titles and locations, and a simple view made the results usable. Adjust this write-up with the real stack and edge cases you hit.',
+        heading: 'How it worked',
+        body: 'Each prime contractor career site was different. Where I could find an internal listings API, the script called that. Everywhere else I pulled the HTML with Selenium and selected requisitions with Beautiful Soup. A daily job ran the scrapers, wrote logs, and emailed what it found.',
       },
     ],
     diagram: {
-      caption: 'Job-opening pipeline',
-      nodes: [
-        { id: 'sites', label: 'Career pages' },
-        { id: 'scrape', label: 'Scraper' },
-        { id: 'clean', label: 'Normalize' },
-        { id: 'view', label: 'Searchable list' },
+      caption: 'Daily scrape pipeline',
+      layers: [
+        {
+          id: 'pipeline',
+          kind: 'pipeline',
+          kicker: 'Pipeline',
+          title: 'Career pages to inbox',
+          blurb: 'API when the site has one. HTML scrape when it does not. The job runs every day.',
+          nodes: [
+            { id: 'sites', label: 'Career pages', detail: 'Defense primes' },
+            { id: 'scrape', label: 'Scrape', detail: 'API or Selenium / Beautiful Soup' },
+            { id: 'job', label: 'Daily job', detail: 'Logging' },
+            { id: 'mail', label: 'Email', detail: 'New requisitions' },
+          ],
+        },
       ],
     },
     images: [],
@@ -276,25 +277,37 @@ export const EXPERIENCE = [
     id: 'kwf-2023',
     org: 'Kashmir World Foundation',
     role: 'Frontend Developer Intern',
-    dates: 'May 2023 – August 2023',
-    summary: 'Frontend work for Kashmir World Foundation. Add the pages, components, and constraints you actually shipped.',
+    dates: 'May 2023 - August 2023',
+    summary:
+      'Worked with international researchers on a React Native app for collecting and tracking data on endangered species. Designed screens in Figma and built them from their feedback.',
     highlights: [
-      'Add what you built on the site.',
-      'Add who it was for and what changed.',
+      'Sat with researchers to turn field needs into functional requirements for data collection and species tracking.',
+      'Designed screens in Figma and implemented them in React Native as feedback came in.',
+      'Shipped camera-station, sighting, and rebait flows — a few of those screens are in the carousel.',
     ],
-    stack: ['HTML', 'CSS', 'JavaScript'],
+    stack: ['React Native', 'Figma'],
     sections: [
       {
-        heading: 'What I shipped',
-        body: 'Name the screens and interactions. If you have a screenshot, drop it in public/experience/ and add it to images below.',
+        heading: 'How it worked',
+        body: 'Researchers needed a mobile app they could use in the field. I worked with them to figure out what it had to do, then designed screens in Figma and built them in React Native. The carousel shows some of those screens.',
       },
     ],
     diagram: {
-      caption: 'Site flow',
-      nodes: [
-        { id: 'home', label: 'Home' },
-        { id: 'about', label: 'About' },
-        { id: 'act', label: 'Get involved' },
+      caption: 'From researcher feedback to screens',
+      layers: [
+        {
+          id: 'pipeline',
+          kind: 'pipeline',
+          kicker: 'Process',
+          title: 'Requirements to app',
+          blurb: 'Talk to researchers, design in Figma, then build the screens in React Native.',
+          nodes: [
+            { id: 'researchers', label: 'Researchers', detail: 'Field needs' },
+            { id: 'reqs', label: 'Requirements', detail: 'What the app must do' },
+            { id: 'figma', label: 'Figma', detail: 'Screen designs' },
+            { id: 'app', label: 'React Native', detail: 'Built screens' },
+          ],
+        },
       ],
     },
     images: [

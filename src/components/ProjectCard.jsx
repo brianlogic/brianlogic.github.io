@@ -2,7 +2,7 @@ import BentoCard from './BentoCard'
 import './ProjectCard.css'
 
 export function projectWhen(project) {
-  return [project.month, project.period].filter(Boolean).join(' · ')
+  return project.period || ''
 }
 
 export function projectLinks(project) {
