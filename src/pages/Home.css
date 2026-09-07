@@ -282,29 +282,38 @@
 .bento-proj-2 { grid-area: proj2; }
 
 .bento-proj.project-card {
-  min-height: 420px;
-  padding: 1.85rem 1.7rem;
-  gap: 0.85rem;
+  min-height: auto;
+  height: 100%;
+  overflow: visible;
+  padding: 1.15rem 1.2rem;
+  gap: 0.55rem;
 }
 
-.bento-proj.project-card span {
-  font-size: 0.82rem;
+.bento-proj .project-when {
+  font-size: 0.7rem;
+  color: var(--home);
 }
 
 .bento-proj.project-card h2 {
-  font-size: 1.85rem;
-  line-height: 1.15;
+  font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+  line-height: 1.2;
 }
 
 .bento-proj.project-card p {
-  font-size: 1.05rem;
+  font-size: 0.88rem;
   color: var(--text);
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
-.bento-proj .project-card span,
-.bento-proj.project-card span {
-  color: var(--home);
+.bento-proj .project-footer__bar {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.bento-proj .project-links {
+  margin-left: 0;
+  justify-content: flex-start;
 }
 
 .bento-proj .project-tags em:nth-child(3n + 2) {
@@ -374,7 +383,24 @@
   white-space: nowrap;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
+  .bento {
+    grid-template-areas:
+      'photo intro intro'
+      'photo about about'
+      'workhead workhead workhead'
+      'proj0 proj0 proj0'
+      'proj1 proj1 proj1'
+      'proj2 proj2 proj2'
+      'tech  tech  tech'
+      'links links links'
+      'edu   edu   edu';
+  }
+
+  .bento-proj.project-card h2 {
+    font-size: 1.35rem;
+  }
+
   .tech-grid {
     grid-template-columns: repeat(3, 1fr);
   }

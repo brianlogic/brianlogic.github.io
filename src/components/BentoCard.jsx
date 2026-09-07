@@ -11,6 +11,7 @@ export default function BentoCard({
   tone,
   immediate = false,
   href,
+  onClick,
 }) {
   const palette = tone || (accent ? 'accent' : '')
   const Tag = href ? motion.a : motion.article
@@ -23,6 +24,7 @@ export default function BentoCard({
       animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       transition={{ duration: 0.6, delay: immediate ? 0 : delay, ease }}
       whileHover={{ y: -2 }}
+      onClick={onClick}
       {...extras}
     >
       {children}

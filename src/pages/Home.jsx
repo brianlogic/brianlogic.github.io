@@ -36,8 +36,8 @@ export default function Home() {
       </BentoCard>
 
       <div className="bento-workhead">
-        <p className="kicker">Selected work</p>
-        <Link to="/projects">All projects →</Link>
+        <p className="kicker">Projects</p>
+        <Link to="/projects">View all →</Link>
       </div>
 
       {FEATURED.map((project, index) => (

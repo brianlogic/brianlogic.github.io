@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion'
+import { AnimatePresence, motion, useScroll } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
@@ -13,10 +13,12 @@ const LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const { scrollYProgress } = useScroll()
-  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 28 })
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16)
+    const onScroll = () => {
+      const y = window.scrollY
+      setScrolled((prev) => (prev ? y > 8 : y > 24))
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -29,10 +31,8 @@ export default function Navbar() {
       animate={{
         backgroundColor: scrolled ? 'rgba(9, 9, 9, 0.78)' : 'rgba(9, 9, 9, 0)',
         backdropFilter: scrolled ? 'blur(16px)' : 'blur(0px)',
-        paddingTop: scrolled ? 10 : 28,
-        paddingBottom: scrolled ? 10 : 28,
       }}
-      transition={{ type: 'spring', stiffness: 280, damping: 34 }}
+      transition={{ duration: 0.22, ease: 'easeOut' }}
       aria-label="Primary"
     >
       <motion.div className="nav-pill" layout transition={{ type: 'spring', stiffness: 320, damping: 32 }}>
@@ -74,7 +74,7 @@ export default function Navbar() {
         ))}
       </motion.div>
 
-      <motion.span className="nav-progress" style={{ scaleX: progress }} />
+      <motion.span className="nav-progress" style={{ scaleX: scrollYProgress }} />
     </motion.nav>
   )
 }

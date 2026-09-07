@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   isolation: isolate;
+  padding: 16px 0;
 }
 
 .nav-pill {

@@ -1,0 +1,147 @@
+.project-demo {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: color-mix(in srgb, var(--name) 5%, #0c0c0c);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-demo__chrome {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.35rem;
+  padding: 0.7rem 0.9rem 0.55rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--name) 8%, transparent);
+}
+
+.project-demo__chrome span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--name) 18%, transparent);
+}
+
+.project-demo__chrome span:nth-child(1) {
+  background: color-mix(in srgb, #e2b56a 55%, transparent);
+}
+
+.project-demo__chrome span:nth-child(2) {
+  background: color-mix(in srgb, #8eb4ff 45%, transparent);
+}
+
+.project-demo__chrome span:nth-child(3) {
+  background: color-mix(in srgb, #7dcec4 40%, transparent);
+}
+
+.project-demo__chrome em {
+  margin-left: 0.45rem;
+  font-style: normal;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-demo__stage {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  padding: 0.6rem 0.9rem 1rem;
+}
+
+.project-demo.has-media .project-demo__stage {
+  width: 100%;
+  min-height: 0;
+  padding: 0.65rem 1rem 0.9rem;
+}
+
+.project-demo__stage img,
+.project-demo__stage video {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(40vh, 400px);
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+  background: #090909;
+}
+
+.project-demo.is-empty .project-demo__stage {
+  min-height: 200px;
+}
+
+.project-demo.is-empty .project-demo__stage p {
+  margin: 0;
+  max-width: 22ch;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.project-demo__caption {
+  margin: 0 0.9rem 0.75rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.project-demo__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0 0.75rem 0.8rem;
+}
+
+.project-demo__nav > button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--name) 10%, transparent);
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.project-demo__nav > button:hover {
+  background: color-mix(in srgb, var(--name) 18%, transparent);
+}
+
+.project-demo__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.project-demo__dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--name) 22%, transparent);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.project-demo__dots button.is-active {
+  width: 16px;
+  background: var(--name);
+}
+
+@media (max-width: 720px) {
+  .project-demo.has-media .project-demo__stage {
+    min-height: 0;
+    padding: 0.5rem 0.65rem 0.75rem;
+  }
+
+  .project-demo__stage img,
+  .project-demo__stage video {
+    max-height: min(28vh, 260px);
+  }
+}

@@ -69,12 +69,12 @@ export const TIMELINE = [
   },
   {
     title: 'Granted Security Clearance',
-    dates: 'January 2026',
-    body: 'Received a Top Secret (TS) Security Clearance from the U.S. government.',
+    dates: 'March 2026',
+    body: 'Received a Top Secret (TS) Security Clearance from DoD.',
   },
   {
     title: 'Full Stack Developer - NorthPoint Technology LLC',
-    dates: 'January 2026',
+    dates: 'May 2026 - August 2026',
     body: 'Returned for a second internship at NorthPoint Technology LLC.',
   },
 ]
@@ -83,33 +83,36 @@ export const PROJECTS = [
   {
     title: 'Cursor Dependency Risk Extension',
     period: 'May 2026 - Present',
-    description: 'Cursor/VS Code extension that checks for dependency version risks in JavaScript projects and rolls back the version if a risk is found.',
-    did: 'Created extension using Typescript to query OSV.dev API for dependency version risks. Rolled back dependecy version if a risk is found. Utilized Cursor API to safely bump dependency versions in a project.',
-    tags: ['TypeScript', 'Cursor API'],
+    description: 'A Cursor and VS Code extension that checks JavaScript dependencies for known version risks and rolls a package back when one turns up.',
+    did: 'Wrote the extension in TypeScript against the OSV.dev API. When a risk is found, it rolls the version back. Used the Cursor API to bump dependencies safely inside a project.',
+    tags: ['TypeScript', 'Cursor API', 'OSV.dev'],
     links: [
       { href: 'https://marketplace.visualstudio.com/items?itemName=BT23.dependency-version-risk', label: 'Live demo' },
     ],
     image: '',
     featured: true,
+    hero: true,
+    demoFolder: 'cursor-risk',
   },
   {
     title: 'Modeling Naval Systems',
     period: 'Feb 2025 - Jul 2025',
-    description: 'Full-stack web application for modeling naval systems and visualizing them in SysML.',
-    did: 'Built the Django and Django REST Framework backend, cleaned and normalized data from multiple sources, and visualized it in SysML.',
+    description: 'A full-stack app for modeling naval systems and viewing them in SysML. Teams can upload, manage, and share diagrams of devices and how they connect.',
+    did: 'Built the Django and Django REST Framework backend, cleaned data from several sources, and drew the SysML views in React.',
     tags: ['React', 'Python', 'Django', 'Django REST Framework', 'Docker', 'PostgreSQL', 'SysML'],
     links: [
       { href: 'https://github.com/brianlogic/Modeling-Navy-Computing/tree/main', label: 'Code' },
     ],
     image: '',
     featured: true,
+    demoFolder: 'modeling-navy-computing',
   },
   {
     title: 'HoosMap',
     period: 'March 2025',
-    description: 'HoosMap provides an interactive map with activities and events. Users can filter through upcoming events with a search and filters provided by UVA events website.',
-    did: 'Built CRUD endpoints for users, events, clubs, bookings using Flask, Firebase, and ChromaDB. Developed integration and unit tests for site.',
-    tags: ['Next.js', 'Tailwind'],
+    description: 'An interactive map of UVA activities and events. People can search and filter upcoming listings pulled from the university events site.',
+    did: 'Built CRUD endpoints for users, events, clubs, and bookings with Flask, Firebase, and ChromaDB, plus integration and unit tests.',
+    tags: ['Python','Flask', 'Firebase', 'ChromaDB', 'Integration Tests', 'Unit Tests', 'Postman'],
     links: [
       { href: 'https://github.com/brianlogic/HoosMap', label: 'Code' },
     ],
@@ -118,8 +121,8 @@ export const PROJECTS = [
   {
     title: 'Crisis Hotline Agent',
     period: 'March 2026',
-    description: 'A crisis-support platform where an AI agent handles incoming calls, provides initial counseling, and generates transcripts for human counselors. Counselors can review calls, notes, and follow-up needs, mark cases as resolved, and view caller histories and snapshots for repeat callers.',
-    did: 'Developed full-stack application using Next.js, Tailwind, and PostgreSQL. Implemented analytics dashboard for human-opoerator. Integrated phone number service with ElevenLabs voice generation API.',
+    description: 'A crisis-support platform where an AI agent takes incoming calls, offers initial counseling, and writes transcripts for human counselors. Staff can review notes, close cases, and see history for repeat callers.',
+    did: 'Built the Next.js, Tailwind, and PostgreSQL app, including an operator analytics dashboard, and wired phone calls through ElevenLabs for voice.',
     tags: ['Next.js', 'Tailwind', 'PostgreSQL', 'ElevenLabs'],
     links: [
       { href: 'https://github.com/YuDavidCao/hotline-agent', label: 'Code' },
@@ -129,11 +132,12 @@ export const PROJECTS = [
   {
     title: 'TheCourseForum',
     period: 'Sep 2024 - Feb 2026',
-    description: 'Course reviews website at the University of Virginia.',
-    did: 'Introduced a querying and filtering system. You can see it in action on the browse page.',
+    description: 'UVA’s student-run course and professor review site, online since 2005. Students rate courses and instructors and read what others wrote.',
+    did: 'Added querying and filtering on the browse page so you can actually find a course. It is live on the site now.',
     tags: ['Python', 'Django', 'PostgreSQL', 'HTML', 'CSS'],
     links: [
       { href: 'https://thecourseforum.com/browse/', label: 'Live demo' },
+      { href: 'https://github.com/brianlogic/TheCourseForum', label: 'Code' },
     ],
     image: '',
     featured: true,
