@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import BentoCard from '../components/BentoCard'
+import Media from '../components/Media'
 import { IconGitHub, IconLinkedIn, IconMail } from '../components/SocialIcons'
 import { ABOUT } from '../data'
 import './About.css'
@@ -33,7 +34,7 @@ export default function About() {
             className="about-photo"
             delay={0.06 + index * 0.04}
           >
-            <img src={photo.src} alt={photo.alt} />
+            <Media src={photo.src} alt={photo.alt} fill />
           </BentoCard>
         ))}
       </div>

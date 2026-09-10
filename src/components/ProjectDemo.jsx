@@ -1,20 +1,9 @@
 import { useEffect, useState } from 'react'
 import { projectDemos } from '../projectMedia'
+import Media from './Media'
 import './ProjectDemo.css'
 
 export { projectDemos }
-
-function isVideo(slide) {
-  if (slide?.type === 'video') return true
-  return typeof slide?.src === 'string' && /\.(mp4|webm|mov)(\?|$)/i.test(slide.src)
-}
-
-function videoType(src) {
-  if (/\.webm(\?|$)/i.test(src)) return 'video/webm'
-  if (/\.mov(\?|$)/i.test(src)) return 'video/quicktime'
-  if (/\.mp4(\?|$)/i.test(src)) return 'video/mp4'
-  return undefined
-}
 
 export default function ProjectDemo({ slides = [], title = 'Project' }) {
   const [index, setIndex] = useState(0)
@@ -52,13 +41,7 @@ export default function ProjectDemo({ slides = [], title = 'Project' }) {
 
       <div className="project-demo__stage">
         {slide ? (
-          isVideo(slide) ? (
-            <video autoPlay muted loop playsInline preload="metadata">
-              <source src={slide.src} type={videoType(slide.src)} />
-            </video>
-          ) : (
-            <img src={slide.src} alt={slide.alt || title} decoding="async" />
-          )
+          <Media src={slide.src} alt={slide.alt || title} type={slide.type} />
         ) : (
           <p>Screenshot or GIF of the app in use</p>
         )}

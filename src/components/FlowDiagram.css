@@ -12,6 +12,14 @@
   overflow: visible;
 }
 
+.flow .media {
+  width: 100%;
+}
+
+.flow .media.is-ready {
+  width: 100%;
+}
+
 .flow img {
   display: block;
   width: 100%;

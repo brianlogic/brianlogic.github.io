@@ -35,6 +35,7 @@
 }
 
 .project-image {
+  position: relative;
   margin: 0 -1.45rem 0.35rem;
   height: 180px;
   overflow: hidden;

@@ -1,0 +1,137 @@
+.media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.media.is-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.media.is-wait:not(.is-fill) {
+  width: 100%;
+  min-height: min(32vh, 280px);
+}
+
+.media.is-ready:not(.is-fill) {
+  width: max-content;
+  max-width: 100%;
+}
+
+.media img,
+.media video {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(10px);
+  transform: scale(1.02);
+  transition:
+    opacity 0.5s ease,
+    filter 0.55s ease,
+    transform 0.55s ease,
+    visibility 0s linear 0.5s;
+}
+
+.media.is-ready img,
+.media.is-ready video {
+  opacity: 1;
+  visibility: visible;
+  filter: blur(0);
+  transform: none;
+  transition:
+    opacity 0.5s ease,
+    filter 0.55s ease,
+    transform 0.55s ease,
+    visibility 0s linear 0s;
+}
+
+.media.is-fill img,
+.media.is-fill video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media__loader {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--name) 7%, #0d0d0d);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.media.is-ready .media__loader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.media__shimmer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--name) 6%, transparent);
+  animation: media-pulse 1.6s ease-in-out infinite;
+}
+
+.media__shimmer::before {
+  content: '';
+  position: absolute;
+  inset: -20% -55%;
+  background: linear-gradient(
+    105deg,
+    transparent 28%,
+    color-mix(in srgb, var(--name) 28%, transparent) 50%,
+    transparent 72%
+  );
+  animation: media-shimmer 1.35s ease-in-out infinite;
+}
+
+.media__ring {
+  position: relative;
+  z-index: 1;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid color-mix(in srgb, var(--name) 22%, transparent);
+  border-top-color: var(--name);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--name) 16%, transparent);
+  animation: media-spin 0.7s linear infinite;
+}
+
+.media.is-ready .media__shimmer,
+.media.is-ready .media__ring,
+.media.is-ready .media__shimmer::before {
+  animation: none;
+}
+
+@keyframes media-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes media-shimmer {
+  from {
+    transform: translateX(-35%);
+  }
+  to {
+    transform: translateX(35%);
+  }
+}
+
+@keyframes media-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

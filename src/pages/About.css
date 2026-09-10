@@ -17,6 +17,7 @@
 }
 
 .about-photo {
+  position: relative;
   padding: 0;
   min-height: 280px;
 }

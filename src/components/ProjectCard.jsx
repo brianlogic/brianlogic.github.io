@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import BentoCard from './BentoCard'
+import Media from './Media'
 import ProjectDemo, { projectDemos } from './ProjectDemo'
 import './ProjectCard.css'
 
@@ -72,7 +73,7 @@ export default function ProjectCard({
       {showcase ? <ProjectDemo slides={demos} title={project.title} /> : null}
       {!showcase && project.image ? (
         <div className="project-image">
-          <img src={project.image} alt={project.imageAlt || project.title} />
+          <Media src={project.image} alt={project.imageAlt || project.title} fill />
         </div>
       ) : null}
       <div className="project-main">

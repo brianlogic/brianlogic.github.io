@@ -56,6 +56,14 @@
   padding: 0.65rem 1rem 0.9rem;
 }
 
+.project-demo__stage .media {
+  border-radius: 8px;
+}
+
+.project-demo.has-media .project-demo__stage .media.is-wait {
+  min-height: min(40vh, 400px);
+}
+
 .project-demo__stage img,
 .project-demo__stage video {
   display: block;
@@ -138,6 +146,10 @@
   .project-demo.has-media .project-demo__stage {
     min-height: 0;
     padding: 0.5rem 0.65rem 0.75rem;
+  }
+
+  .project-demo.has-media .project-demo__stage .media.is-wait {
+    min-height: min(28vh, 260px);
   }
 
   .project-demo__stage img,

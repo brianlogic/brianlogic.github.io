@@ -20,6 +20,7 @@
 }
 
 .experience-carousel__frame {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +29,15 @@
   border-radius: 16px;
   background: color-mix(in srgb, var(--name) 6%, var(--card));
   border: 1px solid color-mix(in srgb, var(--name) 10%, transparent);
+}
+
+.experience-carousel__frame .media {
+  border-radius: 18px;
+}
+
+.experience-carousel__frame .media.is-wait {
+  max-width: 240px;
+  min-height: 380px;
 }
 
 .experience-carousel__frame img {
@@ -89,6 +99,11 @@
 @media (max-width: 640px) {
   .experience-carousel__frame {
     min-height: 0;
+  }
+
+  .experience-carousel__frame .media.is-wait {
+    max-width: 220px;
+    min-height: 280px;
   }
 
   .experience-carousel__frame img {

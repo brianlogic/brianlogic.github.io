@@ -1,4 +1,5 @@
 import { useId, useLayoutEffect, useRef, useState } from 'react'
+import Media from './Media'
 import './FlowDiagram.css'
 
 function NodeCard({ node, index }) {
@@ -422,7 +423,7 @@ export default function FlowDiagram({ caption, nodes = [], layers, image, imageA
   if (image) {
     return (
       <figure className="flow">
-        <img src={image} alt={imageAlt || caption || ''} />
+        <Media src={image} alt={imageAlt || caption || ''} />
         {caption ? <figcaption>{caption}</figcaption> : null}
       </figure>
     )
