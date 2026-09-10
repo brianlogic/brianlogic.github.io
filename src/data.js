@@ -117,6 +117,7 @@ export const PROJECTS = [
       { href: 'https://github.com/brianlogic/HoosMap', label: 'Code' },
     ],
     image: '',
+    demoFolder: 'hoosmap',
   },
   {
     title: 'Crisis Hotline Agent',
@@ -128,6 +129,7 @@ export const PROJECTS = [
       { href: 'https://github.com/YuDavidCao/hotline-agent', label: 'Code' },
     ],
     image: '',
+    demoFolder: 'crisis-hotline-agent'
   },
   {
     title: 'TheCourseForum',

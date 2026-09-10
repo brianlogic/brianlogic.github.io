@@ -15,61 +15,22 @@
 
 .desktop__stack {
   position: relative;
-  width: min(1120px, 100%);
-  height: 100%;
-  min-height: 0;
-  max-height: 100%;
-  justify-self: center;
-  overflow: visible;
-}
-
-.desktop__back {
-  position: absolute;
-  overflow: hidden;
-  pointer-events: none;
-  border-radius: var(--radius-window);
-  background: color-mix(in srgb, var(--window) 70%, transparent);
-  border: 1px solid color-mix(in srgb, var(--name) 10%, transparent);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
-}
-
-.desktop__back .window-chrome strong {
-  text-align: left;
-}
-
-.desktop__back.is-0 {
-  top: 2%;
-  left: -1.6%;
-  width: 88%;
-  height: 90%;
-  opacity: 0.52;
-  transform: scale(0.965);
-  z-index: 1;
-}
-
-.desktop__back.is-1 {
-  top: 5%;
-  right: -2.2%;
-  left: auto;
-  width: 82%;
-  height: 86%;
-  opacity: 0.32;
-  transform: scale(0.94);
-  z-index: 0;
-}
-
-.desktop__front {
-  position: relative;
-  z-index: 3;
   width: 100%;
   height: 100%;
   min-height: 0;
+  max-height: 100%;
+}
+
+.desktop__front {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  min-height: 0;
+  pointer-events: none;
 }
 
 .desktop__front .window {
-  height: 100%;
-  max-height: 100%;
-  min-height: 0;
+  pointer-events: auto;
 }
 
 @media (max-width: 720px) {
@@ -87,12 +48,11 @@
   .desktop__stack,
   .desktop__front,
   .desktop__front .window {
+    position: relative;
+    inset: auto;
     height: auto;
     min-height: calc(100svh - var(--menubar-h) - 72px);
-  }
-
-  .desktop__back {
-    display: none;
+    pointer-events: auto;
   }
 
   .desktop__front .window__body {

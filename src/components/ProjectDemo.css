@@ -6,10 +6,6 @@
   border-bottom: 1px solid var(--line);
 }
 
-.project-demo .window-chrome {
-  background: transparent;
-}
-
 .project-demo__stage {
   display: grid;
   place-items: center;

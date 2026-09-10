@@ -12,7 +12,7 @@ function formatClock(date) {
   })
 }
 
-export default function MenuBar() {
+export default function MenuBar({ onOpen }) {
   const [now, setNow] = useState(() => new Date())
 
   useEffect(() => {
@@ -31,6 +31,7 @@ export default function MenuBar() {
             to={item.to}
             end={item.end}
             className={({ isActive }) => `menubar__link ${isActive ? 'is-active' : ''}`}
+            onClick={() => onOpen?.(item.to)}
           >
             {item.label}
           </NavLink>

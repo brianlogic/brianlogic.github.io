@@ -110,20 +110,9 @@
 
 .bento-photo {
   grid-area: photo;
-  display: flex;
-  flex-direction: column;
+  position: relative;
   padding: 0;
   min-height: 420px;
-}
-
-.bento-photo .window-chrome {
-  background: transparent;
-}
-
-.bento-photo__stage {
-  position: relative;
-  flex: 1;
-  min-height: 0;
 }
 
 .bento-photo:hover {

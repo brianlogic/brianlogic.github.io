@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom'
 import BentoCard from '../components/BentoCard'
 import Media from '../components/Media'
 import { IconGitHub, IconLinkedIn, IconMail } from '../components/SocialIcons'
-import Window from '../components/Window'
 import { ABOUT } from '../data'
 import './About.css'
 
@@ -28,13 +27,13 @@ export default function About() {
         <p>{ABOUT.body}</p>
       </BentoCard>
 
-      <Window className="about-photos" title="Photos" meta="Preview" nested>
+      <div className="about-photos">
         {ABOUT.photos.map((photo) => (
           <figure key={photo.alt} className="about-photo">
             <Media src={photo.src} alt={photo.alt} fill />
           </figure>
         ))}
-      </Window>
+      </div>
 
       <BentoCard className="about-links" tone="mint" delay={0.22}>
         <p className="kicker" id="contact">

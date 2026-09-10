@@ -20,15 +20,14 @@
 }
 
 .experience-carousel__frame {
-  min-height: 420px;
-}
-
-.experience-carousel__frame .window__body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 380px;
+  min-height: 420px;
   padding: 1rem 0.8rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--name) 6%, var(--card));
+  border: 1px solid color-mix(in srgb, var(--name) 10%, transparent);
 }
 
 .experience-carousel__frame .media {

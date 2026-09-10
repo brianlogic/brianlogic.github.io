@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { projectDemos } from '../projectMedia'
 import Media from './Media'
-import { WindowChrome } from './Window'
 import './ProjectDemo.css'
 
 export { projectDemos }
@@ -33,8 +32,6 @@ export default function ProjectDemo({ slides = [], title = 'Project' }) {
           : undefined
       }
     >
-      <WindowChrome meta="Preview" />
-
       <div className="project-demo__stage">
         {slide ? (
           <Media src={slide.src} alt={slide.alt || title} type={slide.type} />

@@ -68,7 +68,7 @@ function dockScale(hover, index) {
   return { scale: 1, lift: 0 }
 }
 
-export default function Dock() {
+export default function Dock({ frames = {}, current, onOpen }) {
   const [hover, setHover] = useState(null)
 
   return (
@@ -77,14 +77,17 @@ export default function Dock() {
         {DESKTOP_APPS.map((app, index) => {
           const Icon = ICONS[app.to]
           const { scale, lift } = dockScale(hover, index)
+          const closed = frames[app.to]?.closed
+          const open = app.to === current && !closed
           return (
             <NavLink
               key={app.to}
               to={app.to}
               end={app.end}
-              className={({ isActive }) => `dock__app ${isActive ? 'is-active' : ''}`}
+              className={`dock__app ${open ? 'is-open' : ''}`}
               style={{ '--dock-scale': scale, '--dock-lift': `${lift}px` }}
               onMouseEnter={() => setHover(index)}
+              onClick={() => onOpen?.(app.to)}
               aria-label={app.label}
             >
               <span className={`dock__icon is-${app.label.toLowerCase()}`}>
