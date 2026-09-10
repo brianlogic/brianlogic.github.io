@@ -346,7 +346,7 @@ export const EXPERIENCE = [
 ]
 
 export const ABOUT = {
-  body: 'Thanks for checking out my portfolio! Outside of internships, classes, and projects, I like to watch basketball, play games, and be active. I lift weights and enjoy most sports. Don\'t hesitate to reach out!',
+  body: 'Thanks for checking out my portfolio! You can find my contact info below. Don\'t hesitate to reach out! Outside of computer science, I like to watch basketball, play games, and be active. I really enjoy weightlifting and enjoy most sports. I\'m also a huge music nerd. I love Black Country, New Road, Jpegmafia, Underscores, Charli XCX, Pink Floyd, and much more.',
   photos: [
     { src: photoshoot, alt: 'Brian in a suit outdoors' },
     { src: japan, alt: 'Brian in Japan' },

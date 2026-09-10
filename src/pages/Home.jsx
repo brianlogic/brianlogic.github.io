@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import BentoCard from '../components/BentoCard'
 import Media from '../components/Media'
 import ProjectCard from '../components/ProjectCard'
+import { WindowChrome } from '../components/Window'
 import { IconGitHub, IconLinkedIn, IconMail } from '../components/SocialIcons'
 import TechIcon from '../components/TechIcon'
 import Wahoowa from '../components/Wahoowa'
@@ -15,7 +16,10 @@ export default function Home() {
   return (
     <div className="bento">
       <BentoCard className="bento-photo" immediate>
-        <Media src={PERSON.photo} alt={`${PERSON.name} portrait`} fill />
+        <WindowChrome title="Portrait" meta="Preview" />
+        <div className="bento-photo__stage">
+          <Media src={PERSON.photo} alt={`${PERSON.name} portrait`} fill />
+        </div>
       </BentoCard>
 
       <BentoCard className="bento-intro" tone="cyan" delay={0.06}>

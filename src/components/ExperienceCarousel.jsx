@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Media from './Media'
+import Window from './Window'
 import './ExperienceCarousel.css'
 
 export default function ExperienceCarousel({ images = [] }) {
@@ -40,9 +41,9 @@ export default function ExperienceCarousel({ images = [] }) {
         </button>
 
         <figure className="experience-carousel__slide">
-          <div className="experience-carousel__frame">
+          <Window className="experience-carousel__frame" title={slide.caption || 'Screens'} meta="Preview" nested>
             <Media src={slide.src} alt={slide.alt || ''} />
-          </div>
+          </Window>
           {slide.caption ? <figcaption>{slide.caption}</figcaption> : null}
         </figure>
 

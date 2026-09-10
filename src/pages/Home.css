@@ -110,9 +110,20 @@
 
 .bento-photo {
   grid-area: photo;
-  position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 0;
   min-height: 420px;
+}
+
+.bento-photo .window-chrome {
+  background: transparent;
+}
+
+.bento-photo__stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
 }
 
 .bento-photo:hover {
@@ -363,7 +374,7 @@
   height: 7px;
   border-radius: 50%;
   background: var(--home);
-  box-shadow: 0 0 0 3px var(--card);
+  box-shadow: 0 0 0 3px #16181e;
 }
 
 .edu-list li > div {

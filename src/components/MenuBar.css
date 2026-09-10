@@ -1,0 +1,62 @@
+.menubar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  height: var(--menubar-h);
+  padding: 0 0.85rem;
+  background: color-mix(in srgb, #12141a 72%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--name) 8%, transparent);
+  backdrop-filter: blur(18px);
+  font-size: var(--chrome);
+  z-index: 20;
+}
+
+.menubar__mark {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--name);
+}
+
+.menubar__app {
+  font-size: var(--chrome);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.menubar__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.menubar__link {
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  color: color-mix(in srgb, var(--name) 78%, transparent);
+  font-weight: 500;
+}
+
+.menubar__link.is-active,
+.menubar__link:hover {
+  color: var(--name);
+  background: color-mix(in srgb, var(--name) 10%, transparent);
+}
+
+.menubar__status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+  color: color-mix(in srgb, var(--name) 82%, transparent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .menubar__nav,
+  .menubar__status span:first-child {
+    display: none;
+  }
+}

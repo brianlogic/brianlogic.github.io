@@ -5,13 +5,14 @@
   padding: 1.4rem 1.45rem;
   border-radius: var(--radius);
   background: var(--card);
-  border: 1px solid var(--line);
+  border: 1px solid color-mix(in srgb, var(--name) 10%, transparent);
   color: var(--text);
+  backdrop-filter: blur(10px);
   transition: border-color 0.3s ease, background 0.3s ease;
 }
 
 .bento-card:hover {
-  border-color: color-mix(in srgb, var(--name) 42%, transparent);
+  border-color: color-mix(in srgb, var(--name) 22%, transparent);
   background: var(--card-hover);
 }
 

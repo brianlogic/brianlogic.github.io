@@ -6,41 +6,8 @@
   border-bottom: 1px solid var(--line);
 }
 
-.project-demo__chrome {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  gap: 0.35rem;
-  padding: 0.7rem 0.9rem 0.55rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--name) 8%, transparent);
-}
-
-.project-demo__chrome span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--name) 18%, transparent);
-}
-
-.project-demo__chrome span:nth-child(1) {
-  background: color-mix(in srgb, #e2b56a 55%, transparent);
-}
-
-.project-demo__chrome span:nth-child(2) {
-  background: color-mix(in srgb, #8eb4ff 45%, transparent);
-}
-
-.project-demo__chrome span:nth-child(3) {
-  background: color-mix(in srgb, #7dcec4 40%, transparent);
-}
-
-.project-demo__chrome em {
-  margin-left: 0.45rem;
-  font-style: normal;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
+.project-demo .window-chrome {
+  background: transparent;
 }
 
 .project-demo__stage {
