@@ -141,6 +141,7 @@ export const PROJECTS = [
     ],
     image: '',
     featured: true,
+    demoFolder: 'tcf',
   },
 ]
 
