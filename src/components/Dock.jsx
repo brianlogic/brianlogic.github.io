@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { PERSON } from '../data'
 import { DESKTOP_APPS } from '../desktop'
-import { IconGitHub, IconLinkedIn, IconMail } from './SocialIcons'
+import { IconGitHub, IconLinkedIn, IconMail, IconResume } from './SocialIcons'
 import './Dock.css'
 
 function IconHome() {
@@ -54,6 +54,7 @@ const ICONS = {
 }
 
 const SOCIAL = [
+  { href: '/resume.pdf', label: 'Resume', Icon: IconResume },
   { href: `mailto:${PERSON.email}`, label: 'Email', Icon: IconMail },
   { href: PERSON.github, label: 'GitHub', Icon: IconGitHub },
   { href: PERSON.linkedin, label: 'LinkedIn', Icon: IconLinkedIn },
@@ -103,7 +104,7 @@ export default function Dock({ frames = {}, current, onOpen }) {
         {SOCIAL.map((item, index) => {
           const slot = DESKTOP_APPS.length + 1 + index
           const { scale, lift } = dockScale(hover, slot)
-          const external = item.href.startsWith('http')
+          const external = item.href.startsWith('http') || item.href.endsWith('.pdf')
           return (
             <a
               key={item.href}

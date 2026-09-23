@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import Dock from './components/Dock'
 import MenuBar from './components/MenuBar'
@@ -35,6 +35,10 @@ export default function App() {
     patchFrame(to, { closed: false, minimized: false })
     if (to !== app.to) navigate(to)
   }
+
+  useEffect(() => {
+    document.title = app.to === '/' ? 'Brian Tran' : `${app.title} · Brian Tran`
+  }, [app])
 
   useLayoutEffect(() => {
     if (!interactive) return
@@ -104,6 +108,12 @@ export default function App() {
               </motion.div>
             ) : null}
           </AnimatePresence>
+          {!open && interactive ? (
+            <button type="button" className="desktop__empty" onClick={() => openApp(app.to)}>
+              <strong>{app.label} is closed</strong>
+              <span>Click here, or open it from the dock.</span>
+            </button>
+          ) : null}
         </div>
       </main>
 

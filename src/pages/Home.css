@@ -7,7 +7,7 @@
     'photo intro intro'
     'photo about about'
     'workhead workhead workhead'
-    'proj0 proj1 proj2'
+    'projects projects projects'
     'tech  tech  tech'
     'links links links'
     'edu   edu   edu';
@@ -255,6 +255,14 @@
   filter: grayscale(0) saturate(1);
 }
 
+.tech-icon em {
+  font-style: normal;
+  font-size: 0.62rem;
+  line-height: 1.25;
+  text-align: center;
+  color: color-mix(in srgb, var(--home) 75%, var(--muted));
+}
+
 .bento-workhead {
   grid-area: workhead;
   display: flex;
@@ -278,9 +286,12 @@
   color: var(--text);
 }
 
-.bento-proj-0 { grid-area: proj0; }
-.bento-proj-1 { grid-area: proj1; }
-.bento-proj-2 { grid-area: proj2; }
+.bento-projects {
+  grid-area: projects;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
 
 .bento-proj.project-card {
   min-height: auto;
@@ -384,15 +395,23 @@
   white-space: nowrap;
 }
 
+.edu-list a {
+  color: var(--home);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.edu-list a:hover {
+  color: var(--text);
+}
+
 @media (max-width: 980px) {
   .bento {
     grid-template-areas:
       'photo intro intro'
       'photo about about'
       'workhead workhead workhead'
-      'proj0 proj0 proj0'
-      'proj1 proj1 proj1'
-      'proj2 proj2 proj2'
+      'projects projects projects'
       'tech  tech  tech'
       'links links links'
       'edu   edu   edu';
@@ -415,9 +434,7 @@
       'intro'
       'about'
       'workhead'
-      'proj0'
-      'proj1'
-      'proj2'
+      'projects'
       'tech'
       'links'
       'edu';
@@ -437,6 +454,10 @@
 
   .bento-intro .bento-intro__role {
     font-size: clamp(1.35rem, 5.5vw, 1.8rem);
+  }
+
+  .bento-projects {
+    grid-template-columns: 1fr;
   }
 
   .tech-grid {

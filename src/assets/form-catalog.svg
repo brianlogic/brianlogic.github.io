@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-label="Redacted form catalog">
+  <rect width="960" height="560" rx="18" fill="#16181e"/>
+  <rect x="0" y="0" width="960" height="52" rx="18" fill="#1c1e26"/>
+  <rect x="0" y="34" width="960" height="18" fill="#1c1e26"/>
+  <circle cx="28" cy="26" r="6" fill="#e2b56a"/>
+  <circle cx="48" cy="26" r="6" fill="#8eb4ff"/>
+  <circle cx="68" cy="26" r="6" fill="#7dcec4"/>
+  <text x="480" y="31" text-anchor="middle" fill="#f4f4f4" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600">Form catalog</text>
+  <g font-family="Segoe UI, sans-serif">
+    <g>
+      <text x="48" y="92" fill="#8eb4ff" font-size="11" font-weight="700" letter-spacing="0.08em">SUBMITTER</text>
+      <rect x="36" y="108" width="280" height="400" rx="14" fill="#1a1c22" stroke="rgba(255,255,255,0.12)"/>
+      <rect x="56" y="132" width="168" height="14" rx="4" fill="#2a2d36"/>
+      <rect x="56" y="168" width="240" height="10" rx="3" fill="#111318"/>
+      <rect x="56" y="186" width="200" height="10" rx="3" fill="#111318"/>
+      <rect x="56" y="220" width="120" height="10" rx="3" fill="#2a2d36"/>
+      <rect x="56" y="240" width="240" height="36" rx="8" fill="#111318"/>
+      <rect x="56" y="292" width="96" height="10" rx="3" fill="#2a2d36"/>
+      <rect x="56" y="312" width="240" height="36" rx="8" fill="#111318"/>
+      <rect x="56" y="364" width="140" height="10" rx="3" fill="#2a2d36"/>
+      <rect x="56" y="384" width="180" height="10" rx="3" fill="#111318"/>
+      <rect x="56" y="460" width="108" height="28" rx="8" fill="#8eb4ff"/>
+    </g>
+    <g>
+      <text x="360" y="92" fill="#e2b56a" font-size="11" font-weight="700" letter-spacing="0.08em">REVIEWER</text>
+      <rect x="348" y="108" width="280" height="400" rx="14" fill="#1a1c22" stroke="rgba(255,255,255,0.12)"/>
+      <rect x="368" y="132" width="150" height="14" rx="4" fill="#2a2d36"/>
+      <rect x="368" y="168" width="240" height="10" rx="3" fill="#111318"/>
+      <rect x="368" y="186" width="210" height="10" rx="3" fill="#111318"/>
+      <rect x="368" y="220" width="240" height="64" rx="8" fill="#111318"/>
+      <rect x="368" y="300" width="88" height="22" rx="11" fill="rgba(226,181,106,0.28)"/>
+      <rect x="368" y="344" width="110" height="10" rx="3" fill="#2a2d36"/>
+      <rect x="368" y="364" width="240" height="52" rx="8" fill="#111318"/>
+      <rect x="368" y="460" width="96" height="28" rx="8" fill="#e2b56a"/>
+      <rect x="476" y="460" width="96" height="28" rx="8" fill="#2a2d36"/>
+    </g>
+    <g>
+      <text x="672" y="92" fill="#7dcec4" font-size="11" font-weight="700" letter-spacing="0.08em">ADMIN</text>
+      <rect x="660" y="108" width="264" height="400" rx="14" fill="#1a1c22" stroke="rgba(255,255,255,0.12)"/>
+      <rect x="680" y="132" width="132" height="14" rx="4" fill="#2a2d36"/>
+      <rect x="680" y="168" width="224" height="10" rx="3" fill="#111318"/>
+      <rect x="680" y="186" width="180" height="10" rx="3" fill="#111318"/>
+      <rect x="680" y="220" width="224" height="10" rx="3" fill="#111318"/>
+      <rect x="680" y="254" width="70" height="22" rx="11" fill="rgba(125,206,196,0.28)"/>
+      <rect x="680" y="296" width="100" height="10" rx="3" fill="#2a2d36"/>
+      <rect x="680" y="316" width="224" height="72" rx="8" fill="#111318"/>
+      <rect x="680" y="408" width="160" height="10" rx="3" fill="#111318"/>
+      <rect x="680" y="460" width="120" height="28" rx="8" fill="#7dcec4"/>
+    </g>
+  </g>
+</svg>

@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom'
 import BentoCard from '../components/BentoCard'
 import Media from '../components/Media'
 import ProjectCard from '../components/ProjectCard'
-import { IconGitHub, IconLinkedIn, IconMail } from '../components/SocialIcons'
+import { IconGitHub, IconLinkedIn, IconMail, IconResume } from '../components/SocialIcons'
 import TechIcon from '../components/TechIcon'
 import Wahoowa from '../components/Wahoowa'
 import { ABOUT, PERSON, PROJECTS, TECH, TIMELINE } from '../data'
 import './Home.css'
 
-const FEATURED = PROJECTS.filter((project) => project.featured).slice(0, 3)
-const HOME_TONES = ['cyan', 'mint', 'violet']
+const FEATURED = PROJECTS.filter((project) => project.featured)
+const HOME_TONES = ['cyan', 'mint', 'violet', 'cyan']
 
 export default function Home() {
   return (
@@ -41,24 +41,26 @@ export default function Home() {
         <Link to="/projects">View all →</Link>
       </div>
 
-      {FEATURED.map((project, index) => (
-        <ProjectCard
-          key={project.title}
-          className={`bento-proj bento-proj-${index}`}
-          project={project}
-          index={index}
-          delay={0.14 + index * 0.05}
-          tone={HOME_TONES[index]}
-          teaser
-        />
-      ))}
+      <div className="bento-projects">
+        {FEATURED.map((project, index) => (
+          <ProjectCard
+            key={project.title}
+            className="bento-proj"
+            project={project}
+            index={index}
+            delay={0.14 + index * 0.05}
+            tone={HOME_TONES[index % HOME_TONES.length]}
+            teaser
+          />
+        ))}
+      </div>
 
       <BentoCard className="bento-tech" tone="cyan" delay={0.3}>
         <p className="kicker">Stack</p>
         <h2>Tools I use</h2>
         <div className="tech-grid">
           {TECH.map((item) => (
-            <TechIcon key={item.id} id={item.id} label={item.label} />
+            <TechIcon key={item.id} id={item.id} label={item.label} used={item.used} />
           ))}
         </div>
       </BentoCard>
@@ -67,8 +69,8 @@ export default function Home() {
         <p className="kicker">Contact</p>
         <div className="link-list">
           {ABOUT.links.map((item) => {
-            const Icon = { Email: IconMail, GitHub: IconGitHub, LinkedIn: IconLinkedIn }[item.label]
-            const external = item.href.startsWith('http')
+            const Icon = { Resume: IconResume, Email: IconMail, GitHub: IconGitHub, LinkedIn: IconLinkedIn }[item.label]
+            const external = item.href.startsWith('http') || item.href.endsWith('.pdf')
 
             return (
               <a
@@ -98,7 +100,15 @@ export default function Home() {
                 <h3>{item.title}</h3>
                 <span>{item.dates}</span>
               </div>
-              <p>{item.body}</p>
+              <p>
+                {item.body}
+                {item.href ? (
+                  <>
+                    {' '}
+                    <Link to={item.href}>Read the write-up →</Link>
+                  </>
+                ) : null}
+              </p>
             </li>
           ))}
         </ul>

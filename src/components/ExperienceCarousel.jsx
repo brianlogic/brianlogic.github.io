@@ -17,27 +17,34 @@ export default function ExperienceCarousel({ images = [] }) {
   }
 
   const slide = slides[index] ?? slides[0]
+  const many = slides.length > 1
 
   return (
     <div
-      className="experience-carousel"
-      tabIndex={0}
-      onKeyDown={(event) => {
-        if (event.key === 'ArrowLeft') go(-1)
-        if (event.key === 'ArrowRight') go(1)
-      }}
+      className={`experience-carousel ${slide.wide ? 'is-wide' : ''} ${many ? '' : 'is-single'}`}
+      tabIndex={many ? 0 : undefined}
+      onKeyDown={
+        many
+          ? (event) => {
+              if (event.key === 'ArrowLeft') go(-1)
+              if (event.key === 'ArrowRight') go(1)
+            }
+          : undefined
+      }
     >
       <p className="kicker">Screens</p>
 
       <div className="experience-carousel__stage">
-        <button
-          type="button"
-          className="experience-carousel__nav"
-          onClick={() => go(-1)}
-          aria-label="Previous screen"
-        >
-          ←
-        </button>
+        {many ? (
+          <button
+            type="button"
+            className="experience-carousel__nav"
+            onClick={() => go(-1)}
+            aria-label="Previous screen"
+          >
+            ←
+          </button>
+        ) : null}
 
         <figure className="experience-carousel__slide">
           <div className="experience-carousel__frame">
@@ -46,16 +53,19 @@ export default function ExperienceCarousel({ images = [] }) {
           {slide.caption ? <figcaption>{slide.caption}</figcaption> : null}
         </figure>
 
-        <button
-          type="button"
-          className="experience-carousel__nav"
-          onClick={() => go(1)}
-          aria-label="Next screen"
-        >
-          →
-        </button>
+        {many ? (
+          <button
+            type="button"
+            className="experience-carousel__nav"
+            onClick={() => go(1)}
+            aria-label="Next screen"
+          >
+            →
+          </button>
+        ) : null}
       </div>
 
+      {many ? (
       <div className="experience-carousel__dots" role="tablist" aria-label="Screens">
         {slides.map((item, i) => (
           <button
@@ -68,6 +78,7 @@ export default function ExperienceCarousel({ images = [] }) {
           />
         ))}
       </div>
+      ) : null}
     </div>
   )
 }

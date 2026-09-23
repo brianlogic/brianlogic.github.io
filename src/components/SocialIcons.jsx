@@ -20,6 +20,17 @@ export function IconLinkedIn() {
   )
 }
 
+export function IconResume() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M7 3.75A1.75 1.75 0 0 1 8.75 2h4.19c.46 0 .9.18 1.23.51l3.32 3.32c.33.33.51.77.51 1.23v12.19A1.75 1.75 0 0 1 16.25 21h-7.5A1.75 1.75 0 0 1 7 19.25V3.75Zm6.25.75V7h2.5l-2.5-2.5ZM9 11.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5H9Zm0 3a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5H9Zm0 3a.75.75 0 0 0 0 1.5h4a.75.75 0 0 0 0-1.5H9Z"
+      />
+    </svg>
+  )
+}
+
 export function IconMail() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">

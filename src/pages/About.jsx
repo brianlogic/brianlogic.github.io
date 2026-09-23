@@ -2,11 +2,12 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import BentoCard from '../components/BentoCard'
 import Media from '../components/Media'
-import { IconGitHub, IconLinkedIn, IconMail } from '../components/SocialIcons'
+import { IconGitHub, IconLinkedIn, IconMail, IconResume } from '../components/SocialIcons'
 import { ABOUT } from '../data'
 import './About.css'
 
 const LINK_ICON = {
+  Resume: IconResume,
   Email: IconMail,
   GitHub: IconGitHub,
   LinkedIn: IconLinkedIn,
@@ -42,7 +43,7 @@ export default function About() {
         <ul>
           {ABOUT.links.map((item) => {
             const Icon = LINK_ICON[item.label]
-            const external = item.href.startsWith('http')
+            const external = item.href.startsWith('http') || item.href.endsWith('.pdf')
 
             return (
               <li key={item.href}>

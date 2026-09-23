@@ -1,8 +1,9 @@
 import cold from './assets/cold.jpg'
+import formCatalog from './assets/form-catalog.svg'
 import face from './assets/face.jpg'
-import happiness from './assets/happiness.jpg'
+import happiness from './assets/happiness.webp'
 import japan from './assets/japan.jpg'
-import photoshoot from './assets/photoshoot.JPG'
+import photoshoot from './assets/photoshoot.webp'
 import screen1 from './assets/screen1.png'
 import screen2 from './assets/screen2.png'
 import screen3 from './assets/screen3.png'
@@ -22,7 +23,7 @@ export const PERSON = {
   github: 'https://github.com/brianlogic',
   linkedin: 'https://www.linkedin.com/in/brian-tran-756508244/',
   about:
-    "Hey! I'm a third year Computer Science student at the University of Virginia. I'm primarily a full-stack developer with experience building stateful web applications. I've interned the past 3 years at a subcontractor in a security-sensitive environment. I'm builidng up skills in deployment/DevOps and AI/ML.",
+    "Hey! I'm a third year Computer Science student at the University of Virginia. I'm primarily a full-stack developer with experience building stateful web applications. I've interned the past 3 years at a subcontractor in a security-sensitive environment. I'm building up skills in deployment/DevOps and AI/ML.",
   photo: face,
   photoCaption: 'Brian Tran',
 }
@@ -35,13 +36,13 @@ export const TECH = [
   { id: 'sql', label: 'SQL' },
   { id: 'html', label: 'HTML/CSS' },
   { id: 'django', label: 'Django' },
-  { id: 'next', label: 'Next.js' },
-  { id: 'postgres', label: 'PostgreSQL' },
+  { id: 'next', label: 'Next.js', used: 'Forms platform' },
+  { id: 'postgres', label: 'PostgreSQL', used: 'Forms + hotline' },
   { id: 'tailwind', label: 'Tailwind' },
   { id: 'ec2', label: 'AWS EC2' },
   { id: 'lambda', label: 'AWS Lambda' },
   { id: 's3', label: 'AWS S3' },
-  { id: 'docker', label: 'Docker' },
+  { id: 'docker', label: 'Docker', used: 'Naval systems' },
   { id: 'java', label: 'Java' },
 ]
 
@@ -49,7 +50,8 @@ export const TIMELINE = [
   {
     title: 'Kashmir World Foundation Intern',
     dates: 'May 2023 - August 2023',
-    body: `Frontend developer for Kashmir World Foundation (KWF)`,
+    body: 'Designed and built React Native screens for field researchers tracking endangered species.',
+    href: '/experience',
   },
   {
     title: 'High School Graduation',
@@ -63,9 +65,10 @@ export const TIMELINE = [
     body: 'Began studying Computer Science at the University of Virginia. ',
   },
   {
-    title: 'Software Engineer Intern - NorthPoint Technology LLC',
+    title: 'Software Engineer Intern - North Point Technology LLC',
     dates: 'June 2024 - August 2024',
-    body: 'Software Engineer Intern at NorthPoint Technology LLC. Worked on webscraping tools to identify job openings in prime contractors',
+    body: 'Built daily Python scrapers that pulled job requisitions from defense prime career sites and emailed what they found.',
+    href: '/experience',
   },
   {
     title: 'Granted Security Clearance',
@@ -73,9 +76,10 @@ export const TIMELINE = [
     body: 'Received a Top Secret (TS) Security Clearance from DoD.',
   },
   {
-    title: 'Full Stack Developer - NorthPoint Technology LLC',
+    title: 'Full Stack Developer - North Point Technology LLC',
     dates: 'May 2026 - August 2026',
-    body: 'Returned for a second internship at NorthPoint Technology LLC.',
+    body: 'Built an internal forms platform: Entra sign-in, a review path from draft to accepted, and a Docker image that EC2 runs.',
+    href: '/experience',
   },
 ]
 
@@ -87,7 +91,7 @@ export const PROJECTS = [
     did: 'Wrote the extension in TypeScript against the OSV.dev API. When a risk is found, it rolls the version back. Used the Cursor API to bump dependencies safely inside a project.',
     tags: ['TypeScript', 'Cursor API', 'OSV.dev'],
     links: [
-      { href: 'https://marketplace.visualstudio.com/items?itemName=BT23.dependency-version-risk', label: 'Live demo' },
+      { href: 'https://marketplace.visualstudio.com/items?itemName=BT23.dependency-version-risk', label: 'Marketplace' },
     ],
     image: '',
     featured: true,
@@ -129,6 +133,7 @@ export const PROJECTS = [
       { href: 'https://github.com/YuDavidCao/hotline-agent', label: 'Code' },
     ],
     image: '',
+    featured: true,
     demoFolder: 'crisis-hotline-agent'
   },
   {
@@ -138,7 +143,7 @@ export const PROJECTS = [
     did: 'Added querying and filtering on the browse page so you can actually find a course. It is live on the site now.',
     tags: ['Python', 'Django', 'PostgreSQL', 'HTML', 'CSS'],
     links: [
-      { href: 'https://thecourseforum.com/browse/', label: 'Live demo' },
+      { href: 'https://thecourseforum.com/browse/', label: 'Live site' },
       { href: 'https://github.com/brianlogic/TheCourseForum', label: 'Code' },
     ],
     image: '',
@@ -239,7 +244,14 @@ export const EXPERIENCE = [
         },
       ],
     },
-    images: [],
+    images: [
+      {
+        src: formCatalog,
+        alt: 'Redacted layout of the form catalog. Submitter, reviewer, and admin each see a different set of fields, with the question text covered.',
+        caption: 'Form catalog, redacted',
+        wide: true,
+      },
+    ],
   },
   {
     id: 'northpoint-2024',
@@ -348,7 +360,7 @@ export const EXPERIENCE = [
 ]
 
 export const ABOUT = {
-  body: 'Thanks for checking out my portfolio! You can find my contact info below. Don\'t hesitate to reach out! Outside of computer science, I like to watch basketball, play games, and be active. I really enjoy weightlifting and enjoy most sports. I\'m also a huge music nerd. I love Black Country, New Road, Jpegmafia, Underscores, Charli XCX, Pink Floyd, and much more.',
+  body: 'Thanks for checking out my portfolio! You can find my contact info below. Don\'t hesitate to reach out! I\'m looking for a new-grad or internship role where I can keep shipping full-stack products and go deeper on deployment and applied ML. Outside of computer science, I like to watch basketball, play games, and be active. I really enjoy weightlifting and enjoy most sports. I\'m also a huge music nerd. I love Black Country, New Road, Jpegmafia, Underscores, Charli XCX, Pink Floyd, and much more.',
   photos: [
     { src: photoshoot, alt: 'Brian in a suit outdoors' },
     { src: japan, alt: 'Brian in Japan' },
@@ -356,6 +368,7 @@ export const ABOUT = {
     { src: cold, alt: 'Brian in a coat at night' },
   ],
   links: [
+    { label: 'Resume', href: '/resume.pdf', display: 'PDF' },
     { label: 'Email', href: `mailto:${PERSON.email}`, display: PERSON.email },
     { label: 'GitHub', href: PERSON.github, display: PERSON.github.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') },
     { label: 'LinkedIn', href: PERSON.linkedin, display: PERSON.linkedin.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') },

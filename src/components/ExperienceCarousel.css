@@ -47,6 +47,21 @@
   box-shadow: 0 12px 32px color-mix(in srgb, #000 40%, transparent);
 }
 
+.experience-carousel.is-single .experience-carousel__stage {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.experience-carousel.is-wide .experience-carousel__frame {
+  min-height: 0;
+}
+
+.experience-carousel.is-wide .experience-carousel__frame img,
+.experience-carousel.is-wide .experience-carousel__frame .media.is-wait {
+  width: min(100%, 720px);
+  max-width: 720px;
+  min-height: 0;
+}
+
 .experience-carousel__slide figcaption {
   margin-top: 0.7rem;
   font-size: 0.82rem;
