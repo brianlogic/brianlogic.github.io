@@ -36,13 +36,13 @@ export const TECH = [
   { id: 'sql', label: 'SQL' },
   { id: 'html', label: 'HTML/CSS' },
   { id: 'django', label: 'Django' },
-  { id: 'next', label: 'Next.js', used: 'Forms platform' },
-  { id: 'postgres', label: 'PostgreSQL', used: 'Forms + hotline' },
+  { id: 'next', label: 'Next.js' },
+  { id: 'postgres', label: 'PostgreSQL' },
   { id: 'tailwind', label: 'Tailwind' },
   { id: 'ec2', label: 'AWS EC2' },
   { id: 'lambda', label: 'AWS Lambda' },
   { id: 's3', label: 'AWS S3' },
-  { id: 'docker', label: 'Docker', used: 'Naval systems' },
+  { id: 'docker', label: 'Docker' },
   { id: 'java', label: 'Java' },
 ]
 
@@ -71,9 +71,14 @@ export const TIMELINE = [
     href: '/experience',
   },
   {
+    title: 'Software Engineer for theCourseForum',
+    dates: 'September 2024 - January 2026',
+    body: 'Developer for course reviews website at the University of Virginia. Implemented enhanced search functionality.',
+  },
+  {
     title: 'Granted Security Clearance',
     dates: 'March 2026',
-    body: 'Received a Top Secret (TS) Security Clearance from DoD.',
+    body: 'Received a security clearance from DoD.',
   },
   {
     title: 'Full Stack Developer - North Point Technology LLC',

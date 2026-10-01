@@ -255,14 +255,6 @@
   filter: grayscale(0) saturate(1);
 }
 
-.tech-icon em {
-  font-style: normal;
-  font-size: 0.62rem;
-  line-height: 1.25;
-  text-align: center;
-  color: color-mix(in srgb, var(--home) 75%, var(--muted));
-}
-
 .bento-workhead {
   grid-area: workhead;
   display: flex;

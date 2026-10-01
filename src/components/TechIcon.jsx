@@ -37,12 +37,11 @@ const ICONS = {
   java: <DiJava />,
 }
 
-export default function TechIcon({ id, label, used }) {
+export default function TechIcon({ id, label }) {
   return (
-    <span className="tech-icon" title={used ? `${label} — ${used}` : label}>
+    <span className="tech-icon" title={label}>
       {ICONS[id]}
       <span>{label}</span>
-      {used ? <em>{used}</em> : null}
     </span>
   )
 }

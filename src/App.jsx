@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import DesktopIcons from './components/DesktopIcons'
 import Dock from './components/Dock'
 import MenuBar from './components/MenuBar'
 import Window from './components/Window'
@@ -70,6 +71,7 @@ export default function App() {
       <MenuBar onOpen={openApp} />
 
       <main className="desktop__stage">
+        <DesktopIcons />
         <div className="desktop__stack" ref={stageRef}>
           <AnimatePresence mode="wait">
             {open ? (

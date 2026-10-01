@@ -60,7 +60,7 @@ export default function Home() {
         <h2>Tools I use</h2>
         <div className="tech-grid">
           {TECH.map((item) => (
-            <TechIcon key={item.id} id={item.id} label={item.label} used={item.used} />
+            <TechIcon key={item.id} id={item.id} label={item.label} />
           ))}
         </div>
       </BentoCard>
