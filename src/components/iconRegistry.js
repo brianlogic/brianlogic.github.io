@@ -1,4 +1,4 @@
-import { FaDiscord, FaTrashAlt } from 'react-icons/fa'
+import { FaDiscord, FaTerminal, FaTrashAlt } from 'react-icons/fa'
 import { SiClaude, SiCursor, SiDocker, SiGooglechrome, SiRoblox, SiSpotify, SiSteam, SiValorant, SiVim } from 'react-icons/si'
 import { DiVisualstudio } from 'react-icons/di'
 import { TbBrandMinecraft, TbBrandOpenai, TbBrandVscode } from 'react-icons/tb'
@@ -13,6 +13,7 @@ const files = import.meta.glob('../assets/icons/*.{svg,png,webp}', {
 const fileUrl = (name) => files[`../assets/icons/${name}`]
 
 const productivity = [
+  { label: 'Terminal', Icon: FaTerminal, color: '#E6EEF5' },
   { label: 'Claude Code', Icon: SiClaude, color: '#D97757' },
   { label: 'Codex', Icon: TbBrandOpenai, color: '#E6EEF5' },
   { label: 'Cursor', Icon: SiCursor, color: '#E6EEF5' },
