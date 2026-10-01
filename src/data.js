@@ -360,7 +360,7 @@ export const EXPERIENCE = [
 ]
 
 export const ABOUT = {
-  body: 'Thanks for checking out my portfolio! You can find my contact info below. Don\'t hesitate to reach out! I\'m looking for a new-grad or internship role where I can keep shipping full-stack products and go deeper on deployment and applied ML. Outside of computer science, I like to watch basketball, play games, and be active. I really enjoy weightlifting and enjoy most sports. I\'m also a huge music nerd. I love Black Country, New Road, Jpegmafia, Underscores, Charli XCX, Pink Floyd, and much more.',
+  body: 'Thanks for checking out my portfolio! You can find my contact info below. Don\'t hesitate to reach out! Outside of computer science, I like to watch basketball, play games, and be active. I really enjoy weightlifting and enjoy most sports. I\'m also a huge music nerd. I love Black Country, New Road, Jpegmafia, Underscores, Charli XCX, Pink Floyd, and much more.',
   photos: [
     { src: photoshoot, alt: 'Brian in a suit outdoors' },
     { src: japan, alt: 'Brian in Japan' },
@@ -368,7 +368,7 @@ export const ABOUT = {
     { src: cold, alt: 'Brian in a coat at night' },
   ],
   links: [
-    { label: 'Resume', href: '/resume.pdf', display: 'PDF' },
+    { label: 'Resume', href: '/Tran_Brian_Resume_2026.pdf', display: 'PDF' },
     { label: 'Email', href: `mailto:${PERSON.email}`, display: PERSON.email },
     { label: 'GitHub', href: PERSON.github, display: PERSON.github.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') },
     { label: 'LinkedIn', href: PERSON.linkedin, display: PERSON.linkedin.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') },

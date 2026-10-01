@@ -54,7 +54,7 @@ const ICONS = {
 }
 
 const SOCIAL = [
-  { href: '/resume.pdf', label: 'Resume', Icon: IconResume },
+  { href: '/Tran_Brian_Resume_2026.pdf', label: 'Resume', Icon: IconResume },
   { href: `mailto:${PERSON.email}`, label: 'Email', Icon: IconMail },
   { href: PERSON.github, label: 'GitHub', Icon: IconGitHub },
   { href: PERSON.linkedin, label: 'LinkedIn', Icon: IconLinkedIn },
