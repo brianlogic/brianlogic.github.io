@@ -155,7 +155,7 @@ function useWires(rootRef, edges) {
       observer.disconnect()
       window.removeEventListener('resize', draw)
     }
-  }, [serialized])
+  }, [serialized, rootRef])
 
   return wires
 }

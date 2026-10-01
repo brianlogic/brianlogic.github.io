@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react'
-import { projectDemos } from '../projectMedia'
 import Media from './Media'
 import './ProjectDemo.css'
-
-export { projectDemos }
 
 export default function ProjectDemo({ slides = [], title = 'Project' }) {
   const [index, setIndex] = useState(0)

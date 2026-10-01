@@ -1,15 +1,16 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import Dock from './components/Dock'
 import MenuBar from './components/MenuBar'
 import Window from './components/Window'
-import About from './pages/About'
-import Experience from './pages/Experience'
-import Home from './pages/Home'
-import Projects from './pages/Projects'
 import { appForPath, defaultWindowRect, emptyWindowFrame, hasUsableRect, useDesktopWindowing } from './desktop'
 import './components/Desktop.css'
+
+const About = lazy(() => import('./pages/About'))
+const Experience = lazy(() => import('./pages/Experience'))
+const Home = lazy(() => import('./pages/Home'))
+const Projects = lazy(() => import('./pages/Projects'))
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -97,6 +98,7 @@ export default function App() {
                   onMinimize={() => patchFrame(app.to, { minimized: true, zoomed: false })}
                   onZoom={() => patchFrame(app.to, { zoomed: !frame.zoomed })}
                 >
+                  <Suspense fallback={null}>
                   <Routes location={location}>
                     <Route path="/" element={<Home />} />
                     <Route path="/experience" element={<Experience />} />
@@ -104,6 +106,7 @@ export default function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Navigate to="/about#contact" replace />} />
                   </Routes>
+                  </Suspense>
                 </Window>
               </motion.div>
             ) : null}

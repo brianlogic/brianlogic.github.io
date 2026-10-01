@@ -57,7 +57,7 @@ export const TIMELINE = [
     title: 'High School Graduation',
     dates: 'June 2024',
     body: `Graduated from Rock Ridge High School in Ashburn, VA. Some notable things I did there: 
-    running my school\'s hackathon, getting 3rd place in regional science and engineering fair, and doing 13 AP classes.`,
+    running my school's hackathon, getting 3rd place in regional science and engineering fair, and doing 13 AP classes.`,
   },
   {
     title: 'Starting first year at University of Virginia',

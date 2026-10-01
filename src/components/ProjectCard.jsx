@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import BentoCard from './BentoCard'
 import Media from './Media'
-import ProjectDemo, { projectDemos } from './ProjectDemo'
+import ProjectDemo from './ProjectDemo'
+import { projectDemos } from '../projectMedia'
 import './ProjectCard.css'
 
-export function projectWhen(project) {
+function projectWhen(project) {
   return project.period || ''
 }
 
-export function projectLinks(project) {
+function projectLinks(project) {
   if (Array.isArray(project.links) && project.links.length) {
     return project.links.filter((item) => item?.href)
   }
@@ -18,7 +19,7 @@ export function projectLinks(project) {
   return []
 }
 
-export function workLabel(item) {
+function workLabel(item) {
   if (item.label) return item.label
 
   try {
@@ -39,7 +40,6 @@ export function workLabel(item) {
 
 export default function ProjectCard({
   project,
-  index,
   delay = 0,
   tone,
   className = '',

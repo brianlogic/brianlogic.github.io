@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import './Media.css'
 
-export function isVideoSrc(src, type) {
+function isVideoSrc(src, type) {
   if (type === 'video') return true
   return typeof src === 'string' && /\.(mp4|webm|mov)(\?|$)/i.test(src)
 }

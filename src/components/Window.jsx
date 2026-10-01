@@ -207,6 +207,7 @@ export default function Window({
               key={handle}
               className={`window-handle is-${handle}`}
               aria-label={`Resize ${handle}`}
+              tabIndex={-1}
             />
           ))
         : null}
